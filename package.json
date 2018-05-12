@@ -1,0 +1,8 @@
+{
+  "name": "bancodobrasil-api",
+  "version": "1.0.0",
+  "description": "Not official API of Banco do Brasil",
+  "main": "index.js",
+  "author": "Arthur Nobrega",
+  "license": "MIT"
+}
