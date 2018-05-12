@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb-base",
+  "plugins": [
+    "babel",
+    "jest"
+  ],
+  "rules": {
+    "semi": 0,
+    "no-console": 0
+  },
+  "globals": {
+    "fetch": true
+  },
+  "env": {
+    "jest/globals": true
+  }
+}
