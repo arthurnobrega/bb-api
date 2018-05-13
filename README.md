@@ -1,4 +1,4 @@
-# bb-api
+# bb-api [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/arthurnobrega/bb-api/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/bb-api.svg?style=flat)](https://www.npmjs.com/package/bb-api) [![Build Status](https://travis-ci.org/arthurnobrega/bb-api.svg?branch=master)](https://travis-ci.org/arthurnobrega/bb-api)
 > Unofficial node.js implementation of Banco do Brasil's mobile API
 
 ## Installation
