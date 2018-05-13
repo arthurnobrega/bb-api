@@ -107,13 +107,13 @@ export default class BB {
     return parseAmountString(saldo)
   }
 
-  getTransactions = async ({ year, month }) => {
+  getTransactions = async (options) => {
     const transactionsUrl = 'tela/ExtratoDeContaCorrente/extrato'
 
     let params = { abrangencia: 8 }
 
-    if (year && month) {
-      params = { periodo: `00${month}${year}` }
+    if (options && options.year && options.month) {
+      params = { periodo: `00${options.month}${options.year}` }
     }
 
     const response = await fetch(`${apiEndpoint}${transactionsUrl}`, {
