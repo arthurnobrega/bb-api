@@ -4,7 +4,9 @@
 ## Installation
 
 ```sh
-yarn install
+yarn add bb-api
+# or
+npm install bb-api --save
 ```
 
 ## Example
