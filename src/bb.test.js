@@ -1,10 +1,10 @@
-import BBCentralizer from './centralizer'
+import BB from './bb'
 
-const centralizer = new BBCentralizer()
+const bb = new BB()
 
 describe('Banco do Brasil API', () => {
   it('should return hash', async () => {
-    const hash = await centralizer.refreshHash()
+    const hash = await bb.refreshHash()
 
     expect(hash).toEqual('3e318fb1a00a88348d65d1b7e79f6d25aefdff0d2481255f685a20dd3960ba43421bbfa3ec97c3c0')
   })
@@ -16,7 +16,7 @@ describe('Banco do Brasil API', () => {
       password: '12345678',
     }
 
-    const login = await centralizer.login(credentials)
+    const login = await bb.login(credentials)
 
     expect(login).toHaveProperty('mci')
     expect(login).toHaveProperty('nomeCliente')
@@ -36,9 +36,25 @@ describe('Banco do Brasil API', () => {
       password: '12345678',
     }
 
-    await centralizer.login(credentials)
-    const balance = await centralizer.getBalance()
+    await bb.login(credentials)
+    const balance = await bb.getBalance()
 
     expect(balance).toEqual(20345.78)
+  })
+
+  it('should return transactions', async () => {
+    const credentials = {
+      branch: '12340',
+      account: '123456',
+      password: '12345678',
+    }
+
+    await bb.login(credentials)
+    const transactions = await bb.getTransactions()
+
+    expect(transactions.length).toBeGreaterThan(0)
+    expect(transactions[0]).toHaveProperty('date')
+    expect(transactions[0]).toHaveProperty('amount')
+    expect(transactions[0]).toHaveProperty('description')
   })
 })

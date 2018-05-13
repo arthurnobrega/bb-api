@@ -5,6 +5,10 @@
   "main": "dist/index.js",
   "author": "Arthur Nobrega",
   "license": "MIT",
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.6.0"
+  },
   "scripts": {
     "build": "babel --quiet src -d dist --source-maps --ignore **/*.test.js,__mocks__",
     "start": "yarn build && node dist/index.js",

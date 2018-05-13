@@ -1,8 +1,11 @@
+import fs from 'fs'
+import { join } from 'path'
+
 export default function fetch(url, { method, body }) {
   let textResponse = ''
 
   switch (true) {
-    case /mov-centralizador\/hash/i.test(url):
+    case /hash/i.test(url):
       textResponse = '3e318fb1a00a88348d65d1b7e79f6d25aefdff0d2481255f685a20dd3960ba43421bbfa3ec97c3c0'
       break
     case /servico\/ServicoLogin\/login/.test(url):
@@ -22,6 +25,9 @@ export default function fetch(url, { method, body }) {
       textResponse = `{"servicoSaldo": {
           "saldo": "20.345,78 C"
         }}`
+      break
+    case /tela\/ExtratoDeContaCorrente\/extrato/.test(url):
+      textResponse = fs.readFileSync(join(__dirname, 'data', 'bankStatament.json'), 'utf8')
       break
     default:
   }

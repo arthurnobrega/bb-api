@@ -7,12 +7,18 @@
 yarn install
 ```
 
-## CLI Usage
+## Example
 
-Just run the command below to start the project:
+```javascript
+  import BB from 'bb-api'
 
-```sh
-yarn start
+  const bb = new BB()
+
+  bb.login({ branch: '12345', account: '123456', password: '12345678' })
+    .then(() => bb.getBalance())
+    .then(balance => console.log(balance))
+    .then(() => bb.getTransactions({ year: '2018', month: '05' }))
+    .then(transactions => console.log(transactions))
 ```
 
 ## Contributing
