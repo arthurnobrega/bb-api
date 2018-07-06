@@ -10,7 +10,7 @@
     "url" : "https://github.com/arthurnobrega/bb-api.git"
   },
   "engines": {
-    "node": "8.11.1",
+    "node": "~8.11.1",
     "npm": "5.6.0"
   },
   "scripts": {
