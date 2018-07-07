@@ -113,7 +113,7 @@ export default class BB {
     let params = { abrangencia: 8 }
 
     if (options && options.year && options.month) {
-      params = { periodo: `00${options.month}${options.year}` }
+      params = { periodo: `01${options.month}${options.year}` }
     }
 
     const response = await fetch(`${apiEndpoint}${transactionsUrl}`, {
@@ -136,7 +136,11 @@ export default class BB {
         return [
           ...acc,
           ...session.celulas.reduce((cellAcc, cell) => {
-            if (cell.TIPO === 'celula' && cell.componentes.length === 3 && cell.componentes[0].componentes[0].texto !== 'Dia') {
+
+            if (cell.TIPO === 'celula' && 
+              cell.componentes.length === 3 && 
+              cell.componentes[0].componentes[0].texto !== 'Dia') {
+              
               const description = cell.componentes[1].componentes[0].texto
               const day = cell.componentes[0].componentes[0].texto
               const amount = cell.componentes[2].componentes[0].texto
