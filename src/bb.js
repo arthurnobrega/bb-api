@@ -110,7 +110,7 @@ export default class BB {
   getTransactions = async (options) => {
     const transactionsUrl = 'tela/ExtratoDeContaCorrente/extrato'
 
-    let params = { abrangencia: 8 }
+    let params = {}
 
     if (options && options.year && options.month) {
       params = { periodo: `01${options.month}${options.year}` }

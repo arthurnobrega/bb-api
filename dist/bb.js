@@ -215,20 +215,18 @@ var BB = function BB() {
   }));
 
   this.getTransactions = function () {
-    var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(_ref6) {
-      var year = _ref6.year,
-          month = _ref6.month;
+    var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(options) {
       var transactionsUrl, params, response, text, json, transactions;
       return _regenerator2.default.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
               transactionsUrl = 'tela/ExtratoDeContaCorrente/extrato';
-              params = { abrangencia: 8 };
+              params = {};
 
 
-              if (year && month) {
-                params = { periodo: '00' + month + year };
+              if (options && options.year && options.month) {
+                params = { periodo: '01' + options.month + options.year };
               }
 
               _context4.next = 5;
@@ -254,10 +252,12 @@ var BB = function BB() {
                   var _session$cabecalho$re = session.cabecalho.replace(monthString, '').replace(' ', '').split('/'),
                       _session$cabecalho$re2 = (0, _slicedToArray3.default)(_session$cabecalho$re, 2),
                       monthName = _session$cabecalho$re2[0],
-                      _year = _session$cabecalho$re2[1];
+                      year = _session$cabecalho$re2[1];
 
                   return [].concat((0, _toConsumableArray3.default)(acc), (0, _toConsumableArray3.default)(session.celulas.reduce(function (cellAcc, cell) {
+
                     if (cell.TIPO === 'celula' && cell.componentes.length === 3 && cell.componentes[0].componentes[0].texto !== 'Dia') {
+
                       var description = cell.componentes[1].componentes[0].texto;
                       var day = cell.componentes[0].componentes[0].texto;
                       var amount = cell.componentes[2].componentes[0].texto;
@@ -267,7 +267,7 @@ var BB = function BB() {
                       }
 
                       return [].concat((0, _toConsumableArray3.default)(cellAcc), [{
-                        date: mountDate(_year, monthName, day),
+                        date: mountDate(year, monthName, day),
                         description: treatDescription(description),
                         amount: parseAmountString(amount)
                       }]);
