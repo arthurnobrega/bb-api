@@ -73,6 +73,8 @@ export default class BB {
       dependenciaOrigem: branch,
       numeroContratoOrigem: account,
       senhaConta: password,
+      // for now this will be static
+      titularidade: '1',
     }
 
     const response = await fetch(`${apiEndpoint}${loginUrl}`, {

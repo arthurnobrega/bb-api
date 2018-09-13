@@ -143,7 +143,9 @@ var BB = function BB() {
                 idh: hash,
                 dependenciaOrigem: branch,
                 numeroContratoOrigem: account,
-                senhaConta: password
+                senhaConta: password,
+                // for now this will be static
+                titularidade: '1'
               };
               _context2.next = 7;
               return (0, _nodeFetch2.default)('' + apiEndpoint + loginUrl, {
