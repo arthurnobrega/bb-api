@@ -1,6 +1,6 @@
 {
   "name": "bb-api",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Unofficial node.js implementation of Banco do Brasil's mobile API",
   "main": "dist/index.js",
   "author": "Arthur Nobrega",
@@ -10,7 +10,7 @@
     "url" : "https://github.com/arthurnobrega/bb-api.git"
   },
   "engines": {
-    "node": "~10.11.0",
+    "node": "^10.12.0",
     "npm": "5.6.0"
   },
   "scripts": {
