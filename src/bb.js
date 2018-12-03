@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import querystring from 'querystring';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from './constants';
 import BBChecking from './checking';
+import BBSavings from './savings';
 
 const refreshHash = async () => {
   const hashUrl = 'hash';
@@ -21,6 +22,7 @@ const refreshHash = async () => {
 export default class BB {
   loginCookie = null;
   checking = null;
+  savings = null;
 
   async login({ branch, account, password }) {
     const loginUrl = 'servico/ServicoLogin/login';
@@ -45,6 +47,7 @@ export default class BB {
     const { login } = await response.json();
 
     this.checking = new BBChecking(this.loginCookie);
+    this.savings = new BBSavings(this.loginCookie);
 
     return login;
   }

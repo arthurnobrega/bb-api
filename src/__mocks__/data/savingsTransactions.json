@@ -1,0 +1,909 @@
+{
+  "conteiner": {
+    "telas": [
+      {
+        "idRandomico": 245438134,
+        "titulo": "Extrato de Poupança",
+        "orientacoesSuportadas": [
+          ["LANDSCAPE_LEFT", "LANDSCAPE_RIGHT", "PORTRAIT", "PORTRAIT_UPSIDE_DOWN"]
+        ],
+        "atalho": false,
+        "offline": false,
+        "parametrosDeSessao": [["variacao", "51"]],
+        "testeira": [],
+        "opcoesDeContexto": [],
+        "menuDeRodape": {
+          "visivel": true,
+          "TIPO": "menuDeRodape",
+          "itens": []
+        },
+        "exibirMenuDeRodape": "UtilizarEstadoAnterior",
+        "botaoVoltar": true,
+        "listaProtocoloRetorno": [],
+        "TIPO": "tabela",
+        "escondeMenu": false,
+        "sessoes": [
+          {
+            "TIPO": "sessao",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "A partir do dia",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/mesAtual",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/mesAtual",
+                  "parametros": []
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "Mês anterior",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/mesAnterior",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/mesAnterior",
+                  "parametros": []
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "Últimos 30 dias",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/ultimos30Dias",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/ultimos30Dias",
+                  "parametros": []
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "cabecalho": "Mês referência: Novembro Var : 51",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Dia",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.15",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Histórico",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Valor",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "05",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.15",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Transferencia Para Conta",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#ff0000",
+                        "TIPO": "texto",
+                        "texto": "15,20D",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase?chaveLancamento=0&data=05%2F11%2F2018&dia_base=1&valor=841%2C18&textoHistorico=Transferencia%20Para%20Conta&dependenciaOrigem=1234-0&numeroDocumento=123456",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase",
+                  "parametros": [
+                    ["chaveLancamento", "0"],
+                    ["data", "05%2F11%2F2018"],
+                    ["dia_base", "1"],
+                    ["valor", "15%2C20"],
+                    ["textoHistorico", "Transferencia%20Para%20Conta"],
+                    ["dependenciaOrigem", "1234-0"],
+                    ["numeroDocumento", "123456"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "16",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.15",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Juros",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#0000ff",
+                        "TIPO": "texto",
+                        "texto": "1,39C",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase?chaveLancamento=0&data=16%2F11%2F2018&dia_base=18&valor=1%2C39&textoHistorico=Juros&dependenciaOrigem=1234-0&numeroDocumento=0",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase",
+                  "parametros": [
+                    ["chaveLancamento", "0"],
+                    ["data", "16%2F11%2F2018"],
+                    ["dia_base", "18"],
+                    ["valor", "1%2C39"],
+                    ["textoHistorico", "Juros"],
+                    ["dependenciaOrigem", "1234-0"],
+                    ["numeroDocumento", "0"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "19",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.15",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Transferencia Para Conta",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#ff0000",
+                        "TIPO": "texto",
+                        "texto": "150,00D",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/getSegundaLinhaDeDetalhamento?chaveLancamento=20181119002741234&data=19%2F11%2F2018&textoHistorico=Transferencia%20Para%20Conta&dependenciaOrigem=1234-0&numeroDocumento=123456",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/getSegundaLinhaDeDetalhamento",
+                  "parametros": [
+                    ["chaveLancamento", "20181119002741234"],
+                    ["data", "19%2F11%2F2018"],
+                    ["textoHistorico", "Transferencia%20Para%20Conta"],
+                    ["dependenciaOrigem", "1234-0"],
+                    ["numeroDocumento", "123456"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "20",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.15",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Juros",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#0000ff",
+                        "TIPO": "texto",
+                        "texto": "3,73C",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase?chaveLancamento=0&data=20%2F11%2F2018&dia_base=21&valor=3%2C73&textoHistorico=Juros&dependenciaOrigem=1234-0&numeroDocumento=0",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase",
+                  "parametros": [
+                    ["chaveLancamento", "0"],
+                    ["data", "20%2F11%2F2018"],
+                    ["dia_base", "21"],
+                    ["valor", "3%2C73"],
+                    ["textoHistorico", "Juros"],
+                    ["dependenciaOrigem", "1234-0"],
+                    ["numeroDocumento", "0"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "26",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.15",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Juros",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#0000ff",
+                        "TIPO": "texto",
+                        "texto": "3,54C",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase?chaveLancamento=0&data=26%2F11%2F2018&dia_base=27&valor=3%2C54&textoHistorico=Juros&dependenciaOrigem=1234-0&numeroDocumento=0",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase",
+                  "parametros": [
+                    ["chaveLancamento", "0"],
+                    ["data", "26%2F11%2F2018"],
+                    ["dia_base", "27"],
+                    ["valor", "3%2C54"],
+                    ["textoHistorico", "Juros"],
+                    ["dependenciaOrigem", "1234-0"],
+                    ["numeroDocumento", "0"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "28",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.15",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Transferencia Para Conta",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#ff0000",
+                        "TIPO": "texto",
+                        "texto": "10,00D",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase?chaveLancamento=0&data=28%2F11%2F2018&dia_base=27&valor=700%2C00&textoHistorico=Transferencia%20Para%20Conta&dependenciaOrigem=1234-0&numeroDocumento=123456789",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase",
+                  "parametros": [
+                    ["chaveLancamento", "0"],
+                    ["data", "28%2F11%2F2018"],
+                    ["dia_base", "27"],
+                    ["valor", "700%2C00"],
+                    ["textoHistorico", "Transferencia%20Para%20Conta"],
+                    ["dependenciaOrigem", "1234-0"],
+                    ["numeroDocumento", "123456789"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "30",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.15",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Juros",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#0000ff",
+                        "TIPO": "texto",
+                        "texto": "0,13C",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase?chaveLancamento=0&data=30%2F11%2F2018&dia_base=1&valor=0%2C13&textoHistorico=Juros&dependenciaOrigem=1234-0&numeroDocumento=0",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/getDetalhamentoDiaBase",
+                  "parametros": [
+                    ["chaveLancamento", "0"],
+                    ["data", "30%2F11%2F2018"],
+                    ["dia_base", "1"],
+                    ["valor", "0%2C13"],
+                    ["textoHistorico", "Juros"],
+                    ["dependenciaOrigem", "1234-0"],
+                    ["numeroDocumento", "0"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "cabecalho": "Saldos",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Descrição",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.5",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Valor",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.5",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Saldo anterior",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.5",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#0000ff",
+                        "TIPO": "texto",
+                        "texto": "319,33C",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.5",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Valores bloqueados",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.5",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#ff0000",
+                        "TIPO": "texto",
+                        "texto": "0,00D",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.5",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Disponível",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.5",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "corDoTexto": "#0000ff",
+                        "TIPO": "texto",
+                        "texto": "0,00C",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.5",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.1",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "imagem",
+                        "origem": "outras/novoIconSucesso.png",
+                        "hash": "O\u0014VuÊ ;¸[\"c<",
+                        "hashEmHexa": "63b06beba98a355fc447a47bdd9c71c4",
+                        "visualizavel": false
+                      }
+                    ],
+                    "largura": "0.1",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "Transação efetivada!",
+                        "alinhamentoDoTexto": "CENTRO",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.8",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": true,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "NENHUM",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          }
+        ]
+      }
+    ],
+    "leiautes": [],
+    "deslizante": false
+  }
+}

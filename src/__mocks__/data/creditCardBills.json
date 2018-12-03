@@ -1,0 +1,755 @@
+{
+  "conteiner": {
+    "telas": [
+      {
+        "idRandomico": -1258890157,
+        "titulo": "Cartão",
+        "orientacoesSuportadas": [
+          ["LANDSCAPE_LEFT", "LANDSCAPE_RIGHT", "PORTRAIT", "PORTRAIT_UPSIDE_DOWN"]
+        ],
+        "atalho": false,
+        "offline": false,
+        "parametrosDeSessao": [],
+        "testeira": [],
+        "opcoesDeContexto": [],
+        "menuDeRodape": {
+          "visivel": true,
+          "TIPO": "menuDeRodape",
+          "itens": []
+        },
+        "exibirMenuDeRodape": "UtilizarEstadoAnterior",
+        "botaoVoltar": true,
+        "listaProtocoloRetorno": [],
+        "TIPO": "tabela",
+        "escondeMenu": false,
+        "sessoes": [
+          {
+            "TIPO": "sessao",
+            "cabecalho": "Vencimento",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/11/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25112018&sequencialFatura=123456789&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25112018"],
+                    ["sequencialFatura", "123456789"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/10/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25102018&sequencialFatura=280905751&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25102018"],
+                    ["sequencialFatura", "280905751"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/09/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25092018&sequencialFatura=270242496&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25092018"],
+                    ["sequencialFatura", "270242496"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/08/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25082018&sequencialFatura=259521657&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25082018"],
+                    ["sequencialFatura", "259521657"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/07/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25072018&sequencialFatura=248760197&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25072018"],
+                    ["sequencialFatura", "248760197"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/06/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25062018&sequencialFatura=238026245&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25062018"],
+                    ["sequencialFatura", "238026245"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/05/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25052018&sequencialFatura=227350509&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25052018"],
+                    ["sequencialFatura", "227350509"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/04/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25042018&sequencialFatura=216614951&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25042018"],
+                    ["sequencialFatura", "216614951"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/03/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25032018&sequencialFatura=205832406&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25032018"],
+                    ["sequencialFatura", "205832406"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/02/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25022018&sequencialFatura=194795922&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25022018"],
+                    ["sequencialFatura", "194795922"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/01/2018",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25012018&sequencialFatura=182951734&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25012018"],
+                    ["sequencialFatura", "182951734"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/12/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25122017&sequencialFatura=171888226&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25122017"],
+                    ["sequencialFatura", "171888226"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/11/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25112017&sequencialFatura=160748204&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25112017"],
+                    ["sequencialFatura", "160748204"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/10/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25102017&sequencialFatura=149561191&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25102017"],
+                    ["sequencialFatura", "149561191"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/09/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25092017&sequencialFatura=138279027&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25092017"],
+                    ["sequencialFatura", "138279027"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/08/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25082017&sequencialFatura=126844848&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25082017"],
+                    ["sequencialFatura", "126844848"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/07/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25072017&sequencialFatura=115302584&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25072017"],
+                    ["sequencialFatura", "115302584"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/06/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25062017&sequencialFatura=103616417&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25062017"],
+                    ["sequencialFatura", "103616417"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/05/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25052017&sequencialFatura=92025594&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25052017"],
+                    ["sequencialFatura", "92025594"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/04/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25042017&sequencialFatura=80324087&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25042017"],
+                    ["sequencialFatura", "80324087"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/03/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25032017&sequencialFatura=68548687&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25032017"],
+                    ["sequencialFatura", "68548687"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/02/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25022017&sequencialFatura=56640337&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25022017"],
+                    ["sequencialFatura", "56640337"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "25/01/2017",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?codigoModalidade=75&numeroContaCartao=12345678&numeroPlastico=4984111111114321&dataFatura=25012017&sequencialFatura=44545081&tipoExtrato=F",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["codigoModalidade", "75"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["dataFatura", "25012017"],
+                    ["sequencialFatura", "44545081"],
+                    ["tipoExtrato", "F"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          }
+        ]
+      }
+    ],
+    "leiautes": [],
+    "deslizante": false
+  }
+}

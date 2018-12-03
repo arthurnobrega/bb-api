@@ -1,0 +1,346 @@
+{
+  "conteiner": {
+    "telas": [
+      {
+        "idRandomico": -2007236279,
+        "nome": "SelecioneUmCartao",
+        "titulo": "Selecione um Cartão",
+        "orientacoesSuportadas": [
+          ["LANDSCAPE_LEFT", "LANDSCAPE_RIGHT", "PORTRAIT", "PORTRAIT_UPSIDE_DOWN"]
+        ],
+        "atalho": true,
+        "offline": false,
+        "parametrosDeSessao": [],
+        "testeira": [],
+        "opcoesDeContexto": [],
+        "menuDeRodape": {
+          "visivel": true,
+          "TIPO": "menuDeRodape",
+          "itens": []
+        },
+        "exibirMenuDeRodape": "UtilizarEstadoAnterior",
+        "botaoVoltar": true,
+        "listaProtocoloRetorno": [],
+        "TIPO": "tabela",
+        "escondeMenu": false,
+        "sessoes": [
+          {
+            "TIPO": "sessao",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "imagem",
+                        "origem": "ImagemPlasticoServlet?nomeClientePersonalizado=JULIANA H I SILVA&numeroCartao=4984.****.****.4321&codigoModalidade=74&codigoSubModalidade=1",
+                        "hash": "Ú?IËY`\u001c·¼u3oË\u0014",
+                        "hashEmHexa": "25c0b634a69fe34843708acc739034ec",
+                        "visualizavel": false
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.05",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "4984.****.****.4321",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.60",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?nomeClientePersonalizado=JULIANA H I SILVA&indicadorTitularidade=1&numeroPlasticoMascarado=4984.****.****.4321&codigoDebitoAutomatico=1&nomeBandeira=VISA&codigoModalidade=74&codigoSubModalidade=1&numeroContaCartao=12345678&numeroPlastico=4984111111114321&diaVencimentoFatura=25&vencimentoFatura=01.01.0001&descricaoIndicadorTitularidade=TITULAR&mciTitular=12345678&descricaoModalidade=OUROCARD PLATINUM VISA",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["nomeClientePersonalizado", "JULIANA H I SILVA"],
+                    ["indicadorTitularidade", "1"],
+                    ["numeroPlasticoMascarado", "4984.****.****.4321"],
+                    ["codigoDebitoAutomatico", "1"],
+                    ["nomeBandeira", "VISA"],
+                    ["codigoModalidade", "74"],
+                    ["codigoSubModalidade", "1"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "4984111111114321"],
+                    ["diaVencimentoFatura", "25"],
+                    ["vencimentoFatura", "01.01.0001"],
+                    ["descricaoIndicadorTitularidade", "TITULAR"],
+                    ["mciTitular", "12345678"],
+                    ["descricaoModalidade", "OUROCARD PLATINUM VISA"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "imagem",
+                        "origem": "ImagemPlasticoServlet?nomeClientePersonalizado=JULIANA H I SILVA&numeroCartao=4984.****.****.1235&codigoModalidade=1&codigoSubModalidade=1",
+                        "hash": "rìò\u000c´\u0000ø\u001d\u0009E%å",
+                        "hashEmHexa": "7295ecf2970cb400f81d094525968ce5",
+                        "visualizavel": false
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.05",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "4984.****.****.1235",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.60",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?nomeClientePersonalizado=JULIANA H I SILVA&indicadorTitularidade=1&numeroPlasticoMascarado=4984.****.****.1235&codigoDebitoAutomatico=1&nomeBandeira=VISA&codigoModalidade=1&codigoSubModalidade=1&numeroContaCartao=12345679&numeroPlastico=4984111111111235&diaVencimentoFatura=25&vencimentoFatura=01.01.0001&descricaoIndicadorTitularidade=TITULAR&mciTitular=12345678&descricaoModalidade=OUROCARD VISA GOLD",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["nomeClientePersonalizado", "JULIANA H I SILVA"],
+                    ["indicadorTitularidade", "1"],
+                    ["numeroPlasticoMascarado", "4984.****.****.1235"],
+                    ["codigoDebitoAutomatico", "1"],
+                    ["nomeBandeira", "VISA"],
+                    ["codigoModalidade", "1"],
+                    ["codigoSubModalidade", "1"],
+                    ["numeroContaCartao", "12345679"],
+                    ["numeroPlastico", "4984111111111235"],
+                    ["diaVencimentoFatura", "25"],
+                    ["vencimentoFatura", "01.01.0001"],
+                    ["descricaoIndicadorTitularidade", "TITULAR"],
+                    ["mciTitular", "12345678"],
+                    ["descricaoModalidade", "OUROCARD VISA GOLD"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "imagem",
+                        "origem": "ImagemPlasticoServlet?nomeClientePersonalizado=JULIANA H I SILVA&numeroCartao=5549.****.****.4322&codigoModalidade=75&codigoSubModalidade=1",
+                        "hash": "Y~ÂK\u0001\u0003\u0016ð\u0014/]\"\u0012",
+                        "hashEmHexa": "597ec24b010316f0142f9e5d93229f12",
+                        "visualizavel": false
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.05",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "5549.****.****.4322",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.60",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?nomeClientePersonalizado=JULIANA H I SILVA&indicadorTitularidade=1&numeroPlasticoMascarado=5549.****.****.4322&codigoDebitoAutomatico=1&nomeBandeira=MASTERCARD&codigoModalidade=75&codigoSubModalidade=1&numeroContaCartao=12345678&numeroPlastico=5549111111114322&diaVencimentoFatura=25&vencimentoFatura=01.01.0001&descricaoIndicadorTitularidade=TITULAR&mciTitular=12345678&descricaoModalidade=OUROCARD PLATINUM MASTERCARD",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["nomeClientePersonalizado", "JULIANA H I SILVA"],
+                    ["indicadorTitularidade", "1"],
+                    ["numeroPlasticoMascarado", "5549.****.****.4322"],
+                    ["codigoDebitoAutomatico", "1"],
+                    ["nomeBandeira", "MASTERCARD"],
+                    ["codigoModalidade", "75"],
+                    ["codigoSubModalidade", "1"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "5549111111114322"],
+                    ["diaVencimentoFatura", "25"],
+                    ["vencimentoFatura", "01.01.0001"],
+                    ["descricaoIndicadorTitularidade", "TITULAR"],
+                    ["mciTitular", "12345678"],
+                    ["descricaoModalidade", "OUROCARD PLATINUM MASTERCARD"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "imagem",
+                        "origem": "ImagemPlasticoServlet?nomeClientePersonalizado=JULIANA SILVA&numeroCartao=5067.****.****.4444&codigoModalidade=192&codigoSubModalidade=1",
+                        "hash": "µ2¼éÆìØ\u000bÞ\u000c`\u000dsÈ",
+                        "hashEmHexa": "4acd4316391327f46621f39ff28c7538",
+                        "visualizavel": false
+                      }
+                    ],
+                    "largura": "0.35",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.05",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "5067.****.****.4444",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.60",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/extrato?nomeClientePersonalizado=JULIANA SILVA&indicadorTitularidade=1&numeroPlasticoMascarado=5067.****.****.4444&codigoDebitoAutomatico=2&nomeBandeira=ELO&codigoModalidade=192&codigoSubModalidade=1&numeroContaCartao=12345678&numeroPlastico=5067111111114444&diaVencimentoFatura=1&vencimentoFatura=01.01.0001&descricaoIndicadorTitularidade=TITULAR&mciTitular=12345678&descricaoModalidade=OUROCARD ELO MAIS",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/extrato",
+                  "parametros": [
+                    ["nomeClientePersonalizado", "JULIANA SILVA"],
+                    ["indicadorTitularidade", "1"],
+                    ["numeroPlasticoMascarado", "5067.****.****.4444"],
+                    ["codigoDebitoAutomatico", "2"],
+                    ["nomeBandeira", "ELO"],
+                    ["codigoModalidade", "192"],
+                    ["codigoSubModalidade", "1"],
+                    ["numeroContaCartao", "12345678"],
+                    ["numeroPlastico", "5067111111114444"],
+                    ["diaVencimentoFatura", "1"],
+                    ["vencimentoFatura", "01.01.0001"],
+                    ["descricaoIndicadorTitularidade", "TITULAR"],
+                    ["mciTitular", "12345678"],
+                    ["descricaoModalidade", "OUROCARD ELO MAIS"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          }
+        ]
+      }
+    ],
+    "leiautes": [],
+    "deslizante": false
+  }
+}

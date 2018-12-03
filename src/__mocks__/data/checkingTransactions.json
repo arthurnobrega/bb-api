@@ -311,7 +311,7 @@
                     "header": false
                   }
                 ],
-                "acao": "tela/EmissorComprovante/carregarComprovanteAtravesDeLancamento?numeroDocumento=601234000110840&dataInicio=16%2F04%2F2018&dataFim=16%2F04%2F2018&agenciaRelacionamento=12340&contaRelacionamento=0001108409&codigoHistorico=470&valTrasf=82%2C50%20D",
+                "acao": "tela/EmissorComprovante/carregarComprovanteAtravesDeLancamento?numeroDocumento=601234000110840&dataInicio=16%2F04%2F2018&dataFim=16%2F04%2F2018&agenciaRelacionamento=12340&contaRelacionamento=0001234567&codigoHistorico=470&valTrasf=82%2C50%20D",
                 "protocolo": {
                   "TIPO": "ACAO",
                   "acao": "tela/EmissorComprovante/carregarComprovanteAtravesDeLancamento",
@@ -320,7 +320,7 @@
                     ["dataInicio", "16%2F04%2F2018"],
                     ["dataFim", "16%2F04%2F2018"],
                     ["agenciaRelacionamento", "12340"],
-                    ["contaRelacionamento", "0001108409"],
+                    ["contaRelacionamento", "0001234567"],
                     ["codigoHistorico", "470"],
                     ["valTrasf", "82%2C50%20D"]
                   ]
@@ -522,7 +522,7 @@
                     "header": false
                   }
                 ],
-                "acao": "tela/EmissorComprovante/carregarComprovanteAtravesDeLancamento?numeroDocumento=601234000110840&dataInicio=27%2F04%2F2018&dataFim=27%2F04%2F2018&agenciaRelacionamento=12340&contaRelacionamento=0001108409&codigoHistorico=470&valTrasf=50%2C00%20D",
+                "acao": "tela/EmissorComprovante/carregarComprovanteAtravesDeLancamento?numeroDocumento=601234000110840&dataInicio=27%2F04%2F2018&dataFim=27%2F04%2F2018&agenciaRelacionamento=12340&contaRelacionamento=0001234567&codigoHistorico=470&valTrasf=50%2C00%20D",
                 "protocolo": {
                   "TIPO": "ACAO",
                   "acao": "tela/EmissorComprovante/carregarComprovanteAtravesDeLancamento",
@@ -531,7 +531,7 @@
                     ["dataInicio", "27%2F04%2F2018"],
                     ["dataFim", "27%2F04%2F2018"],
                     ["agenciaRelacionamento", "12340"],
-                    ["contaRelacionamento", "0001108409"],
+                    ["contaRelacionamento", "0001234567"],
                     ["codigoHistorico", "470"],
                     ["valTrasf", "50%2C00%20D"]
                   ]
@@ -1859,7 +1859,7 @@
                     "header": false
                   }
                 ],
-                "acao": "tela/EmissorComprovante/carregarComprovanteAtravesDeLancamento?numeroDocumento=123400000110840&dataInicio=10%2F05%2F2018&dataFim=10%2F05%2F2018&agenciaRelacionamento=77003&contaRelacionamento=0001108409&codigoHistorico=144&valTrasf=257%2C00%20D",
+                "acao": "tela/EmissorComprovante/carregarComprovanteAtravesDeLancamento?numeroDocumento=123400000110840&dataInicio=10%2F05%2F2018&dataFim=10%2F05%2F2018&agenciaRelacionamento=77003&contaRelacionamento=0001234567&codigoHistorico=144&valTrasf=257%2C00%20D",
                 "protocolo": {
                   "TIPO": "ACAO",
                   "acao": "tela/EmissorComprovante/carregarComprovanteAtravesDeLancamento",
@@ -1868,7 +1868,7 @@
                     ["dataInicio", "10%2F05%2F2018"],
                     ["dataFim", "10%2F05%2F2018"],
                     ["agenciaRelacionamento", "77003"],
-                    ["contaRelacionamento", "0001108409"],
+                    ["contaRelacionamento", "0001234567"],
                     ["codigoHistorico", "144"],
                     ["valTrasf", "257%2C00%20D"]
                   ]
