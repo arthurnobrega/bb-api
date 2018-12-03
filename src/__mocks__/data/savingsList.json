@@ -1,0 +1,106 @@
+{
+  "conteiner": {
+    "telas": [
+      {
+        "idRandomico": -1675740911,
+        "titulo": "Extrato de Poupança",
+        "orientacoesSuportadas": [
+          ["LANDSCAPE_LEFT", "LANDSCAPE_RIGHT", "PORTRAIT", "PORTRAIT_UPSIDE_DOWN"]
+        ],
+        "atalho": false,
+        "offline": false,
+        "parametrosDeSessao": [],
+        "testeira": [],
+        "opcoesDeContexto": [],
+        "menuDeRodape": {
+          "visivel": true,
+          "TIPO": "menuDeRodape",
+          "itens": []
+        },
+        "exibirMenuDeRodape": "UtilizarEstadoAnterior",
+        "botaoVoltar": true,
+        "listaProtocoloRetorno": [],
+        "TIPO": "tabela",
+        "escondeMenu": false,
+        "sessoes": [
+          {
+            "TIPO": "sessao",
+            "cabecalho": "Poupança Ouro",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "1 - Poupança",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "1",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/menuPeriodo?variacao=1",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/menuPeriodo",
+                  "parametros": [["variacao", "1"]]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "texto": "51 - Poupança",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "1",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "acao": "tela/ExtratoDePoupanca/menuPeriodo?variacao=51",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoDePoupanca/menuPeriodo",
+                  "parametros": [["variacao", "51"]]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          }
+        ]
+      }
+    ],
+    "leiautes": [],
+    "deslizante": false
+  }
+}
