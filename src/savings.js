@@ -25,7 +25,9 @@ export default class BBSavings {
 
     const sessions = json.conteiner.telas[0].sessoes[0];
     const title = sessions.cabecalho;
-    const variations = sessions.celulas.map(c => c.acao.split('variacao=').splice(-1)[0]);
+    const variations = sessions.celulas.map(
+      c => c.acao.split('variacao=').splice(-1)[0],
+    );
 
     return variations.map(v => ({
       variation: parseInt(v, 10),
@@ -55,7 +57,9 @@ export default class BBSavings {
     const text = await response.text();
     const json = JSON.parse(text);
 
-    const session = json.conteiner.telas[0].sessoes.find(s => s.cabecalho && s.cabecalho.includes('Mês referência'));
+    const session = json.conteiner.telas[0].sessoes.find(
+      s => s.cabecalho && s.cabecalho.includes('Mês referência'),
+    );
     return session.celulas
       .map(c => c.componentes)
       .filter(comp => comp[0].componentes[0].texto !== 'Dia')

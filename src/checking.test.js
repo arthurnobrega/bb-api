@@ -24,7 +24,10 @@ describe('Checking', () => {
     };
 
     await bb.login(credentials);
-    const transactions = await bb.checking.getTransactions({ year: 2018, month: 10 });
+    const transactions = await bb.checking.getTransactions({
+      year: 2018,
+      month: 10,
+    });
 
     expect(transactions.length).toBeGreaterThan(0);
     expect(transactions[0]).toHaveProperty('date');

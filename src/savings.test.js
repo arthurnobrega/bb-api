@@ -13,7 +13,7 @@ describe('Savings', () => {
     await bb.login(credentials);
     const savings = await bb.savings.getAccounts();
 
-    expect(savings.length).toBe(2);
+    expect(savings).toHaveLength(2);
 
     const [first, second] = savings;
 
@@ -44,7 +44,7 @@ describe('Savings', () => {
       month: 11,
     });
 
-    expect(transactions.length).toBe(7);
+    expect(transactions).toHaveLength(7);
 
     expect(transactions).toMatchObject([
       {

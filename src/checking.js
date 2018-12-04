@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import querystring from 'querystring';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from './constants';
-import { mountDate, treatDescription, parseAmountString } from './helpers';
+import { treatDescription, parseAmountString } from './helpers';
 
 export default class BBChecking {
   loginCookie = null;
@@ -32,46 +32,49 @@ export default class BBChecking {
     const text = await response.text();
     const json = JSON.parse(text);
 
-    const transactions = json.conteiner.telas[0].sessoes.reduce((acc, session) => {
-      const monthString = 'Mês referência: ';
-      if (
-        session.TIPO === 'sessao' &&
-        session.cabecalho &&
-        session.cabecalho.indexOf(monthString) === 0
-      ) {
-        return [
-          ...acc,
-          ...session.celulas.reduce((cellAcc, cell) => {
-            if (
-              cell.TIPO === 'celula' &&
-              cell.componentes.length === 3 &&
-              cell.componentes[0].componentes[0].texto !== 'Dia'
-            ) {
-              const description = cell.componentes[1].componentes[0].texto;
-              const day = cell.componentes[0].componentes[0].texto;
-              const amount = cell.componentes[2].componentes[0].texto;
+    const transactions = json.conteiner.telas[0].sessoes.reduce(
+      (acc, session) => {
+        const monthString = 'Mês referência: ';
+        if (
+          session.TIPO === 'sessao' &&
+          session.cabecalho &&
+          session.cabecalho.indexOf(monthString) === 0
+        ) {
+          return [
+            ...acc,
+            ...session.celulas.reduce((cellAcc, cell) => {
+              if (
+                cell.TIPO === 'celula' &&
+                cell.componentes.length === 3 &&
+                cell.componentes[0].componentes[0].texto !== 'Dia'
+              ) {
+                const description = cell.componentes[1].componentes[0].texto;
+                const day = cell.componentes[0].componentes[0].texto;
+                const amount = cell.componentes[2].componentes[0].texto;
 
-              if (['Saldo Anterior', 'S A L D O'].includes(description)) {
-                return cellAcc;
+                if (['Saldo Anterior', 'S A L D O'].includes(description)) {
+                  return cellAcc;
+                }
+
+                return [
+                  ...cellAcc,
+                  {
+                    date: new Date(year, month, day),
+                    description: treatDescription(description),
+                    amount: parseAmountString(amount),
+                  },
+                ];
               }
 
-              return [
-                ...cellAcc,
-                {
-                  date: new Date(year, month, day),
-                  description: treatDescription(description),
-                  amount: parseAmountString(amount),
-                },
-              ];
-            }
+              return cellAcc;
+            }, []),
+          ];
+        }
 
-            return cellAcc;
-          }, []),
-        ];
-      }
-
-      return acc;
-    }, []);
+        return acc;
+      },
+      [],
+    );
 
     return transactions;
   }

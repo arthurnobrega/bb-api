@@ -1,13 +1,13 @@
 {
   "name": "bb-api",
-  "version": "1.0.12",
+  "version": "2.0.0",
   "description": "Unofficial node.js implementation of Banco do Brasil's mobile API",
   "main": "dist/index.js",
   "author": "Arthur Nobrega",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/arthurnobrega/bb-api.git"
+    "type": "git",
+    "url": "https://github.com/arthurnobrega/bb-api.git"
   },
   "engines": {
     "node": "^10.12.0",
@@ -16,7 +16,8 @@
   "scripts": {
     "build": "babel --quiet src -d dist --source-maps --ignore **/*.test.js,__mocks__",
     "start": "yarn build && node dist/index.js",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -27,24 +28,28 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-jest": "^22.4.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jest": "^21.15.1",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "jest": "^22.4.3",
-    "regenerator-runtime": "^0.11.1"
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "prettier": "^1.15.3",
+    "regenerator-runtime": "^0.13.1"
   },
   "dependencies": {
-    "node-fetch": "^2.1.2"
+    "node-fetch": "^2.3.0"
   }
 }

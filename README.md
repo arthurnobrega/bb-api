@@ -1,4 +1,5 @@
 # bb-api [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/arthurnobrega/bb-api/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/bb-api.svg?style=flat)](https://www.npmjs.com/package/bb-api) [![Build Status](https://travis-ci.org/arthurnobrega/bb-api.svg?branch=master)](https://travis-ci.org/arthurnobrega/bb-api)
+
 > Unofficial node.js implementation of Banco do Brasil's mobile API
 
 ## Installation
@@ -12,15 +13,16 @@ npm install bb-api --save
 ## Example
 
 ```javascript
-  import BB from 'bb-api'
+import BB from 'bb-api';
 
-  const bb = new BB()
+const bb = new BB();
 
-  bb.login({ branch: '12345', account: '123456', password: '12345678' })
-    .then(() => bb.getBalance())
-    .then(balance => console.log(balance))
-    .then(() => bb.getTransactions({ year: '2018', month: '05' }))
-    .then(transactions => console.log(transactions))
+bb.login({ branch: 'xxxxx', account: 'xxxxxx', password: 'xxxxxxxx' })
+  .then(() => bb.checking.getBalance())
+  .then(() => bb.checking.getTransactions({ year: 2018, month: 10 }))
+  .then(() =>
+    bb.savings.getTransactions({ variation: 51, year: 2018, month: 10 }),
+  );
 ```
 
 ## Contributing

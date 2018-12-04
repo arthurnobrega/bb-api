@@ -20,6 +20,9 @@ describe('Banco do Brasil API', () => {
     expect(login).toHaveProperty('dependenciaOrigem', '1234-0');
     expect(login).toHaveProperty('segmento', 'EXCLUSIVO_REMOTO');
     expect(login).toHaveProperty('habilitadoParaAtendimentoRemoto', 'true');
-    expect(login).toHaveProperty('statusAutorizacaoTransacoesFinanceiras', 'INICIALIZADO');
+    expect(login).toHaveProperty(
+      'statusAutorizacaoTransacoesFinanceiras',
+      'INICIALIZADO',
+    );
   });
 });

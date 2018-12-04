@@ -21,7 +21,9 @@ const refreshHash = async () => {
 
 export default class BB {
   loginCookie = null;
+
   checking = null;
+
   savings = null;
 
   async login({ branch, account, password }) {
