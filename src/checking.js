@@ -4,19 +4,20 @@ import { BASE_ENDPOINT, DEFAULT_HEADERS } from './constants';
 import { mountDate, treatDescription, parseAmountString } from './helpers';
 
 export default class BBChecking {
-  loginToken = null;
+  loginCookie = null;
 
-  constructor(loginToken) {
-    this.loginToken = loginToken;
+  constructor(loginCookie) {
+    this.loginCookie = loginCookie;
   }
 
-  async getTransactions(options) {
+  async getTransactions({ year, month }) {
+    const pad = s => s.toString().padStart('0', 2);
     const transactionsUrl = 'tela/ExtratoDeContaCorrente/extrato';
 
     let params = {};
 
-    if (options && options.year && options.month) {
-      params = { periodo: `01${options.month}${options.year}` };
+    if (year && month) {
+      params = { periodo: `01${pad(month)}${year}` };
     }
 
     const response = await fetch(`${BASE_ENDPOINT}${transactionsUrl}`, {
@@ -28,7 +29,8 @@ export default class BBChecking {
       body: querystring.stringify(params),
     });
 
-    const json = await response.json();
+    const text = await response.text();
+    const json = JSON.parse(text);
 
     const transactions = json.conteiner.telas[0].sessoes.reduce((acc, session) => {
       const monthString = 'Mês referência: ';
@@ -37,11 +39,6 @@ export default class BBChecking {
         session.cabecalho &&
         session.cabecalho.indexOf(monthString) === 0
       ) {
-        const [monthName, year] = session.cabecalho
-          .replace(monthString, '')
-          .replace(' ', '')
-          .split('/');
-
         return [
           ...acc,
           ...session.celulas.reduce((cellAcc, cell) => {
@@ -61,7 +58,7 @@ export default class BBChecking {
               return [
                 ...cellAcc,
                 {
-                  date: mountDate(year, monthName, day),
+                  date: new Date(year, month, day),
                   description: treatDescription(description),
                   amount: parseAmountString(amount),
                 },
@@ -90,7 +87,9 @@ export default class BBChecking {
       method: 'POST',
     });
 
-    const { servicoSaldo } = await response.json();
+    const text = await response.text();
+    const { servicoSaldo } = JSON.parse(text);
+
     const { saldo } = servicoSaldo;
 
     return parseAmountString(saldo);

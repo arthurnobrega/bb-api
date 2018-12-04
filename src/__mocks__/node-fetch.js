@@ -3,26 +3,27 @@ import loginResponse from './data/loginResponse.json';
 import checkingBalance from './data/checkingBalance.json';
 import checkingTransactions from './data/checkingTransactions.json';
 import savingsList from './data/savingsList.json';
+import savingsTransactions from './data/savingsTransactions.json';
 
 export default function fetch(url) {
   let textResponse = '';
-  let jsonResponse = {};
 
   if (/hash/i.test(url)) {
     textResponse = hashResponse;
   } else if (/servico\/ServicoLogin\/login/.test(url)) {
-    jsonResponse = loginResponse;
+    textResponse = loginResponse;
   } else if (/servico\/ServicoSaldo\/saldo/.test(url)) {
-    jsonResponse = checkingBalance;
+    textResponse = checkingBalance;
   } else if (/tela\/ExtratoDeContaCorrente\/extrato/.test(url)) {
-    jsonResponse = checkingTransactions;
+    textResponse = checkingTransactions;
   } else if (/tela\/ExtratoDePoupanca\/entrada/.test(url)) {
-    jsonResponse = savingsList;
+    textResponse = savingsList;
+  } else if (/tela\/ExtratoDePoupanca\/menuPeriodo/.test(url)) {
+    textResponse = savingsTransactions;
   }
 
   return {
-    text: () => Promise.resolve(textResponse),
-    json: () => Promise.resolve(jsonResponse),
+    text: () => Promise.resolve(JSON.stringify(textResponse)),
     headers: {
       get: () => {},
     },

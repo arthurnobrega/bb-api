@@ -44,7 +44,8 @@ export default class BB {
 
     this.loginCookie = response.headers.get('set-cookie');
 
-    const { login } = await response.json();
+    const text = await response.text();
+    const { login } = JSON.parse(text);
 
     this.checking = new BBChecking(this.loginCookie);
     this.savings = new BBSavings(this.loginCookie);

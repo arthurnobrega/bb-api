@@ -22,10 +22,13 @@ export function mountDate(year, monthName, day) {
 }
 
 export function parseAmountString(amountString) {
-  const parts = amountString.split(' ');
-  const isPositive = parts[1] === 'C';
+  const parsedAmount = amountString.replace(' ', '');
+  const isPositive = parsedAmount.substr(-1) === 'C';
 
-  const amount = parseFloat(parts[0].replace('.', '').replace(',', '.'));
+  const amount = parseFloat(parsedAmount
+    .slice(0, -1)
+    .replace('.', '')
+    .replace(',', '.'));
 
   return isPositive ? amount : -amount;
 }

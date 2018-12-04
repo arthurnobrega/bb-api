@@ -3,7 +3,7 @@ import BB from './bb';
 const bb = new BB();
 
 describe('Banco do Brasil API', () => {
-  it('should login', async () => {
+  it('login', async () => {
     const credentials = {
       branch: '12340',
       account: '123456',

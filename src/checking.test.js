@@ -3,7 +3,7 @@ import BB from './bb';
 const bb = new BB();
 
 describe('Checking', () => {
-  it('should return checking balance', async () => {
+  it('returns checking balance', async () => {
     const credentials = {
       branch: '12340',
       account: '123456',
@@ -16,7 +16,7 @@ describe('Checking', () => {
     expect(balance).toEqual(20345.78);
   });
 
-  it('should return checking transactions', async () => {
+  it('returns checking transactions', async () => {
     const credentials = {
       branch: '12340',
       account: '123456',
@@ -24,7 +24,7 @@ describe('Checking', () => {
     };
 
     await bb.login(credentials);
-    const transactions = await bb.checking.getTransactions();
+    const transactions = await bb.checking.getTransactions({ year: 2018, month: 10 });
 
     expect(transactions.length).toBeGreaterThan(0);
     expect(transactions[0]).toHaveProperty('date');
