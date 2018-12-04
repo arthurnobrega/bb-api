@@ -3,6 +3,7 @@ import querystring from 'querystring';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from './constants';
 import BBChecking from './checking';
 import BBSavings from './savings';
+import BBCreditCard from './creditCard';
 
 const refreshHash = async () => {
   const hashUrl = 'hash';
@@ -25,6 +26,8 @@ export default class BB {
   checking = null;
 
   savings = null;
+
+  creditCard = null;
 
   async login({ branch, account, password }) {
     const loginUrl = 'servico/ServicoLogin/login';
@@ -51,6 +54,7 @@ export default class BB {
 
     this.checking = new BBChecking(this.loginCookie);
     this.savings = new BBSavings(this.loginCookie);
+    this.creditCard = new BBCreditCard(this.loginCookie);
 
     return login;
   }
