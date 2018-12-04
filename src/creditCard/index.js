@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
-import { BASE_ENDPOINT, DEFAULT_HEADERS } from './constants';
+import BBCard from './card';
+import { BASE_ENDPOINT, DEFAULT_HEADERS } from '../constants';
 
 export default class BBCreditCard {
   loginCookie = null;
@@ -34,4 +35,6 @@ export default class BBCreditCard {
         cardNumber: c.numeroPlastico,
       }));
   }
+
+  getCard = card => new BBCard(card);
 }
