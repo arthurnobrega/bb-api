@@ -46,6 +46,25 @@ describe('Credit Card', () => {
     });
   });
 
+  it('returns credit card bills', async () => {
+    const credentials = {
+      branch: '12340',
+      account: '123456',
+      password: '12345678',
+    };
+
+    await bb.login(credentials);
+    const cards = await bb.creditCard.getCards();
+    const card = await bb.creditCard.getCard(cards[0]);
+    const bills = await card.getBillsDates();
+
+    expect(bills).toHaveLength(23);
+
+    const [first, second, ...rest] = bills;
+    expect(first).toEqual('25112018');
+    expect(second).toEqual('25102018');
+  });
+
   // it('returns savings transactions', async () => {
   //   const credentials = {
   //     branch: '12340',

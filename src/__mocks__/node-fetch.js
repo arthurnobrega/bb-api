@@ -5,6 +5,7 @@ import checkingTransactions from './data/checkingTransactions.json';
 import savingsList from './data/savingsList.json';
 import savingsTransactions from './data/savingsTransactions.json';
 import creditCardList from './data/creditCardList.json';
+import creditCardBills from './data/creditCardBills.json';
 
 export default function fetch(url) {
   let textResponse = '';
@@ -23,6 +24,8 @@ export default function fetch(url) {
     textResponse = savingsTransactions;
   } else if (/tela\/ExtratoFatura\/entrada/.test(url)) {
     textResponse = creditCardList;
+  } else if (/tela\/ExtratoFatura\/mesAnterior/.test(url)) {
+    textResponse = creditCardBills;
   }
 
   return {
