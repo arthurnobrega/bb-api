@@ -6,7 +6,12 @@
         "nome": "SelecioneUmCartao",
         "titulo": "Selecione um Cartão",
         "orientacoesSuportadas": [
-          ["LANDSCAPE_LEFT", "LANDSCAPE_RIGHT", "PORTRAIT", "PORTRAIT_UPSIDE_DOWN"]
+          [
+            "LANDSCAPE_LEFT",
+            "LANDSCAPE_RIGHT",
+            "PORTRAIT",
+            "PORTRAIT_UPSIDE_DOWN"
+          ]
         ],
         "atalho": true,
         "offline": false,
@@ -226,7 +231,7 @@
                     "header": false
                   }
                 ],
-                "acao": "tela/ExtratoFatura/extrato?nomeClientePersonalizado=JULIANA H I SILVA&indicadorTitularidade=1&numeroPlasticoMascarado=5549.****.****.4322&codigoDebitoAutomatico=1&nomeBandeira=MASTERCARD&codigoModalidade=75&codigoSubModalidade=1&numeroContaCartao=12345678&numeroPlastico=5549111111114322&diaVencimentoFatura=25&vencimentoFatura=01.01.0001&descricaoIndicadorTitularidade=TITULAR&mciTitular=12345678&descricaoModalidade=OUROCARD PLATINUM MASTERCARD",
+                "acao": "tela/ExtratoFatura/extrato?nomeClientePersonalizado=JULIANA H I SILVA&indicadorTitularidade=1&numeroPlasticoMascarado=5549.****.****.4322&codigoDebitoAutomatico=1&nomeBandeira=MASTERCARD&codigoModalidade=75&codigoSubModalidade=1&numeroContaCartao=12345678&numeroPlastico=5549111111114322&diaVencimentoFatura=25&vencimentoFatura=01.01.0001&descricaoIndicadorTitularidade=TITULAR&mciTitular=12345688&descricaoModalidade=OUROCARD PLATINUM MASTERCARD",
                 "protocolo": {
                   "TIPO": "ACAO",
                   "acao": "tela/ExtratoFatura/extrato",
@@ -238,7 +243,7 @@
                     ["nomeBandeira", "MASTERCARD"],
                     ["codigoModalidade", "75"],
                     ["codigoSubModalidade", "1"],
-                    ["numeroContaCartao", "12345678"],
+                    ["numeroContaCartao", "12345688"],
                     ["numeroPlastico", "5549111111114322"],
                     ["diaVencimentoFatura", "25"],
                     ["vencimentoFatura", "01.01.0001"],
@@ -302,7 +307,7 @@
                     "header": false
                   }
                 ],
-                "acao": "tela/ExtratoFatura/extrato?nomeClientePersonalizado=JULIANA SILVA&indicadorTitularidade=1&numeroPlasticoMascarado=5067.****.****.4444&codigoDebitoAutomatico=2&nomeBandeira=ELO&codigoModalidade=192&codigoSubModalidade=1&numeroContaCartao=12345678&numeroPlastico=5067111111114444&diaVencimentoFatura=1&vencimentoFatura=01.01.0001&descricaoIndicadorTitularidade=TITULAR&mciTitular=12345678&descricaoModalidade=OUROCARD ELO MAIS",
+                "acao": "tela/ExtratoFatura/extrato?nomeClientePersonalizado=JULIANA SILVA&indicadorTitularidade=1&numeroPlasticoMascarado=5067.****.****.4444&codigoDebitoAutomatico=2&nomeBandeira=ELO&codigoModalidade=192&codigoSubModalidade=1&numeroContaCartao=12345699&numeroPlastico=5067111111114444&diaVencimentoFatura=1&vencimentoFatura=01.01.0001&descricaoIndicadorTitularidade=TITULAR&mciTitular=12345678&descricaoModalidade=OUROCARD ELO MAIS",
                 "protocolo": {
                   "TIPO": "ACAO",
                   "acao": "tela/ExtratoFatura/extrato",
@@ -314,7 +319,7 @@
                     ["nomeBandeira", "ELO"],
                     ["codigoModalidade", "192"],
                     ["codigoSubModalidade", "1"],
-                    ["numeroContaCartao", "12345678"],
+                    ["numeroContaCartao", "12345699"],
                     ["numeroPlastico", "5067111111114444"],
                     ["diaVencimentoFatura", "1"],
                     ["vencimentoFatura", "01.01.0001"],

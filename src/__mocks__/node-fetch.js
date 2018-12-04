@@ -4,6 +4,7 @@ import checkingBalance from './data/checkingBalance.json';
 import checkingTransactions from './data/checkingTransactions.json';
 import savingsList from './data/savingsList.json';
 import savingsTransactions from './data/savingsTransactions.json';
+import creditCardList from './data/creditCardList.json';
 
 export default function fetch(url) {
   let textResponse = '';
@@ -20,6 +21,8 @@ export default function fetch(url) {
     textResponse = savingsList;
   } else if (/tela\/ExtratoDePoupanca\/menuPeriodo/.test(url)) {
     textResponse = savingsTransactions;
+  } else if (/tela\/ExtratoFatura\/entrada/.test(url)) {
+    textResponse = creditCardList;
   }
 
   return {
