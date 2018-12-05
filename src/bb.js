@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
 import querystring from 'querystring';
+import LoginCookie from './loginCookie';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from './constants';
 import BBChecking from './checking';
 import BBSavings from './savings';
@@ -21,8 +22,6 @@ const refreshHash = async () => {
 };
 
 export default class BB {
-  loginCookie = null;
-
   checking = null;
 
   savings = null;
@@ -47,14 +46,14 @@ export default class BB {
       body: querystring.stringify(params),
     });
 
-    this.loginCookie = response.headers.get('set-cookie');
+    LoginCookie.setGlobal(response.headers.get('set-cookie'));
 
     const text = await response.text();
     const { login } = JSON.parse(text);
 
-    this.checking = new BBChecking(this.loginCookie);
-    this.savings = new BBSavings(this.loginCookie);
-    this.creditCard = new BBCreditCard(this.loginCookie);
+    this.checking = new BBChecking();
+    this.savings = new BBSavings();
+    this.creditCard = new BBCreditCard();
 
     return login;
   }

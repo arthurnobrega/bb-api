@@ -7,31 +7,41 @@ import savingsTransactions from './data/savingsTransactions.json';
 import creditCardList from './data/creditCardList.json';
 import creditCardBills from './data/creditCardBills.json';
 
-export default function fetch(url) {
+export default function fetch(url, { headers }) {
   let textResponse = '';
+  let headersReponse = {};
 
   if (/hash/i.test(url)) {
     textResponse = hashResponse;
   } else if (/servico\/ServicoLogin\/login/.test(url)) {
     textResponse = loginResponse;
-  } else if (/servico\/ServicoSaldo\/saldo/.test(url)) {
-    textResponse = checkingBalance;
-  } else if (/tela\/ExtratoDeContaCorrente\/extrato/.test(url)) {
-    textResponse = checkingTransactions;
-  } else if (/tela\/ExtratoDePoupanca\/entrada/.test(url)) {
-    textResponse = savingsList;
-  } else if (/tela\/ExtratoDePoupanca\/menuPeriodo/.test(url)) {
-    textResponse = savingsTransactions;
-  } else if (/tela\/ExtratoFatura\/entrada/.test(url)) {
-    textResponse = creditCardList;
-  } else if (/tela\/ExtratoFatura\/mesAnterior/.test(url)) {
-    textResponse = creditCardBills;
+    headersReponse = {
+      'set-cookie': 'JSESSIONID=fake; path=/; HttpOnly',
+    };
+  } else {
+    if (!headers.cookie) {
+      throw new Error('no cookie');
+    }
+
+    if (/servico\/ServicoSaldo\/saldo/.test(url)) {
+      textResponse = checkingBalance;
+    } else if (/tela\/ExtratoDeContaCorrente\/extrato/.test(url)) {
+      textResponse = checkingTransactions;
+    } else if (/tela\/ExtratoDePoupanca\/entrada/.test(url)) {
+      textResponse = savingsList;
+    } else if (/tela\/ExtratoDePoupanca\/menuPeriodo/.test(url)) {
+      textResponse = savingsTransactions;
+    } else if (/tela\/ExtratoFatura\/entrada/.test(url)) {
+      textResponse = creditCardList;
+    } else if (/tela\/ExtratoFatura\/mesAnterior/.test(url)) {
+      textResponse = creditCardBills;
+    }
   }
 
   return {
     text: () => Promise.resolve(JSON.stringify(textResponse)),
     headers: {
-      get: () => {},
+      get: item => headersReponse[item],
     },
   };
 }

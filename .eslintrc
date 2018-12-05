@@ -2,16 +2,11 @@
   "env": {
     "jest": true
   },
-  "extends": [
-    "airbnb-base",
-    "prettier"
-  ],
-  "plugins": [
-    "jest",
-    "prettier"
-  ],
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["jest", "prettier"],
   "parser": "babel-eslint",
   "rules": {
+    "class-methods-use-this": "off",
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
@@ -20,14 +15,10 @@
     "no-underscore-dangle": [
       "error",
       {
-        "allow": [
-          "_id"
-        ]
+        "allow": ["_id"]
       }
     ],
-    "prettier/prettier": [
-      "error"
-    ],
+    "prettier/prettier": ["error"],
     "strict": 0
   }
 }
