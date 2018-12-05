@@ -17,10 +17,6 @@ export function getMonthNumber(monthName) {
   return monthNumbers[monthName];
 }
 
-export function mountDate(year, monthName, day) {
-  return new Date(year, getMonthNumber(monthName), day);
-}
-
 export function parseAmountString(amountString) {
   const parsedAmount = amountString.replace(' ', '');
   const isPositive = parsedAmount.substr(-1) === 'C';

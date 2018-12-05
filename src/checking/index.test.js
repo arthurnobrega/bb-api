@@ -1,4 +1,4 @@
-import BB from './bb';
+import BB from '../bb';
 
 const bb = new BB();
 
