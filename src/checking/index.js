@@ -1,8 +1,8 @@
 import fetch from 'node-fetch';
 import querystring from 'querystring';
-import LoginCookie from './loginCookie';
-import { BASE_ENDPOINT, DEFAULT_HEADERS } from './constants';
-import { treatDescription, parseAmountString } from './helpers';
+import LoginCookie from '../loginCookie';
+import { BASE_ENDPOINT, DEFAULT_HEADERS } from '../constants';
+import { treatDescription, parseAmountString } from '../helpers';
 
 export default class BBChecking {
   async getTransactions({ year, month }) {

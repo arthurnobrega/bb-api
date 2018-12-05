@@ -1,9 +1,9 @@
-import BB from './bb';
-
-const bb = new BB();
+import BB from '../bb';
 
 describe('Savings', () => {
-  it('returns savings accounts list', async () => {
+  const bb = new BB();
+
+  beforeEach(async () => {
     const credentials = {
       branch: '12340',
       account: '123456',
@@ -11,6 +11,9 @@ describe('Savings', () => {
     };
 
     await bb.login(credentials);
+  });
+
+  it('returns savings accounts list', async () => {
     const savings = await bb.savings.getAccounts();
 
     expect(savings).toHaveLength(2);
@@ -29,13 +32,6 @@ describe('Savings', () => {
   });
 
   it('returns savings transactions', async () => {
-    const credentials = {
-      branch: '12340',
-      account: '123456',
-      password: '12345678',
-    };
-
-    await bb.login(credentials);
     const savings = await bb.savings.getAccounts();
     const [first] = savings;
     const transactions = await bb.savings.getTransactions({

@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 import querystring from 'querystring';
 import LoginCookie from '../loginCookie';
+import BBCardBill from './cardBill';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from '../constants';
 
 export default class BBCard {
@@ -11,7 +12,7 @@ export default class BBCard {
     this.cardNumber = cardNumber;
   }
 
-  async getBillsDates() {
+  async getBills() {
     const billsUrl = 'tela/ExtratoFatura/mesAnterior';
 
     const params = {
@@ -33,7 +34,18 @@ export default class BBCard {
     const json = JSON.parse(text);
 
     return json.conteiner.telas[0].sessoes[0].celulas
-      .map(c => c.protocolo.parametros.filter(p => p[0] === 'dataFatura'))
-      .map(p => p[0][1]);
+      .map(c =>
+        c.protocolo.parametros
+          .map(p => ({ [p[0]]: p[1] }))
+          .reduce((acc, p) => ({ ...acc, ...p }), {}),
+      )
+      .map(
+        p =>
+          new BBCardBill({
+            cardAccountNumber: this.cardAccountNumber,
+            billId: p.sequencialFatura,
+            billDate: p.dataFatura,
+          }),
+      );
   }
 }
