@@ -1,22 +1,17 @@
 import fetch from 'node-fetch';
 import querystring from 'querystring';
+import LoginCookie from './loginCookie';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from './constants';
 import { treatDescription, parseAmountString } from './helpers';
 
 export default class BBSavings {
-  loginCookie = null;
-
-  constructor(loginCookie) {
-    this.loginCookie = loginCookie;
-  }
-
   async getAccounts() {
     const accountsUrl = 'tela/ExtratoDePoupanca/entrada';
 
     const response = await fetch(`${BASE_ENDPOINT}${accountsUrl}`, {
       headers: {
         ...DEFAULT_HEADERS,
-        cookie: this.loginCookie,
+        cookie: LoginCookie.getGlobal(),
       },
     });
 
@@ -49,7 +44,7 @@ export default class BBSavings {
       {
         headers: {
           ...DEFAULT_HEADERS,
-          cookie: this.loginCookie,
+          cookie: LoginCookie.getGlobal(),
         },
       },
     );

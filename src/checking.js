@@ -1,15 +1,10 @@
 import fetch from 'node-fetch';
 import querystring from 'querystring';
+import LoginCookie from './loginCookie';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from './constants';
 import { treatDescription, parseAmountString } from './helpers';
 
 export default class BBChecking {
-  loginCookie = null;
-
-  constructor(loginCookie) {
-    this.loginCookie = loginCookie;
-  }
-
   async getTransactions({ year, month }) {
     const pad = s => s.toString().padStart('0', 2);
     const transactionsUrl = 'tela/ExtratoDeContaCorrente/extrato';
@@ -23,7 +18,7 @@ export default class BBChecking {
     const response = await fetch(`${BASE_ENDPOINT}${transactionsUrl}`, {
       headers: {
         ...DEFAULT_HEADERS,
-        cookie: this.loginCookie,
+        cookie: LoginCookie.getGlobal(),
       },
       method: 'POST',
       body: querystring.stringify(params),
@@ -85,7 +80,7 @@ export default class BBChecking {
     const response = await fetch(`${BASE_ENDPOINT}${balanceUrl}`, {
       headers: {
         ...DEFAULT_HEADERS,
-        cookie: this.loginCookie,
+        cookie: LoginCookie.getGlobal(),
       },
       method: 'POST',
     });

@@ -1,21 +1,16 @@
 import fetch from 'node-fetch';
 import BBCard from './card';
+import LoginCookie from '../loginCookie';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from '../constants';
 
 export default class BBCreditCard {
-  loginCookie = null;
-
-  constructor(loginCookie) {
-    this.loginCookie = loginCookie;
-  }
-
   async getCards() {
     const accountsUrl = 'tela/ExtratoFatura/entrada';
 
     const response = await fetch(`${BASE_ENDPOINT}${accountsUrl}`, {
       headers: {
         ...DEFAULT_HEADERS,
-        cookie: this.loginCookie,
+        cookie: LoginCookie.getGlobal(),
       },
     });
 
@@ -28,13 +23,15 @@ export default class BBCreditCard {
           .map(p => ({ [p[0]]: p[1] }))
           .reduce((acc, p) => ({ ...acc, ...p }), {}),
       )
-      .map(c => ({
-        brand: c.nomeBandeira,
-        modality: c.codigoModalidade,
-        cardAccountNumber: c.numeroContaCartao,
-        cardNumber: c.numeroPlastico,
-      }));
+      .map(
+        c =>
+          new BBCard({
+            loginCookie: LoginCookie.getGlobal(),
+            brand: c.nomeBandeira,
+            modality: c.codigoModalidade,
+            cardAccountNumber: c.numeroContaCartao,
+            cardNumber: c.numeroPlastico,
+          }),
+      );
   }
-
-  getCard = card => new BBCard(card);
 }

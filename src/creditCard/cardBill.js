@@ -1,29 +1,28 @@
 import fetch from 'node-fetch';
 import querystring from 'querystring';
-import LoginCookie from '../loginCookie';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from '../constants';
 
-export default class BBCard {
-  constructor({ brand, modality, cardAccountNumber, cardNumber }) {
-    this.brand = brand;
-    this.modality = modality;
+export default class BBCardBill {
+  constructor({ cardAccountNumber, billId, billDate }) {
     this.cardAccountNumber = cardAccountNumber;
-    this.cardNumber = cardNumber;
+    this.billId = billId;
+    this.billDate = billDate;
   }
 
-  async getBillsDates() {
-    const billsUrl = 'tela/ExtratoFatura/mesAnterior';
+  async getTransactions() {
+    const transactionsUrl = 'tela/ExtratoFatura/extrato';
 
     const params = {
-      codigoModalidade: this.modality,
       numeroContaCartao: this.cardAccountNumber,
-      numeroPlastico: this.cardNumber,
+      sequencialFatura: this.billId,
+      dataFatura: this.billDate,
+      tipoExtrato: 'F',
     };
 
-    const response = await fetch(`${BASE_ENDPOINT}${billsUrl}`, {
+    const response = await fetch(`${BASE_ENDPOINT}${transactionsUrl}`, {
       headers: {
         ...DEFAULT_HEADERS,
-        cookie: LoginCookie.getGlobal(),
+        cookie: this.loginCookie,
       },
       method: 'POST',
       body: querystring.stringify(params),
