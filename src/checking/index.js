@@ -12,7 +12,7 @@ export default class BBChecking {
     let params = {};
 
     if (year && month) {
-      params = { periodo: `01${pad(month)}${year}` };
+      params = { periodo: `00${pad(month)}${year}` };
     }
 
     const response = await fetch(`${BASE_ENDPOINT}${transactionsUrl}`, {
@@ -54,7 +54,7 @@ export default class BBChecking {
                 return [
                   ...cellAcc,
                   {
-                    date: new Date(year, month, day),
+                    date: new Date(year, month - 1, day),
                     description: treatDescription(description),
                     amount: parseAmountString(amount),
                   },
