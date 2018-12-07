@@ -61,22 +61,32 @@ function stringToDate(string) {
     year = '20' + year;
   }
 
-  return new Date(year, month, day);
+  return new Date(year, parseInt(month, 10) - 1, day);
 }
 
-function stringToDateInstallment(string, month) {
-  var parts = string.split('/');
+function stringToDateInstallment(_ref) {
+  var date = _ref.date,
+      description = _ref.description,
+      billMonth = _ref.billMonth;
+
+  var installment = description.match(/.*(\d{2,3})\/(\d{2,3}).*/)[1];
+  var parts = date.split('/');
   var day = parts[0];
+  var month = parseInt(parts[1], 10) + parseInt(installment, 10) - 1;
   var year = '20' + parts[2];
+
+  if (/^ANTEC /.test(description)) {
+    month = parseInt(billMonth, 10) - 1;
+  }
 
   return new Date(year, parseInt(month, 10) - 1, day);
 }
 
 var BBCardBill = function () {
-  function BBCardBill(_ref) {
-    var cardAccountNumber = _ref.cardAccountNumber,
-        billId = _ref.billId,
-        billDate = _ref.billDate;
+  function BBCardBill(_ref2) {
+    var cardAccountNumber = _ref2.cardAccountNumber,
+        billId = _ref2.billId,
+        billDate = _ref2.billDate;
     (0, _classCallCheck3.default)(this, BBCardBill);
 
     this.cardAccountNumber = cardAccountNumber;
@@ -87,7 +97,7 @@ var BBCardBill = function () {
   (0, _createClass3.default)(BBCardBill, [{
     key: 'getTransactions',
     value: function () {
-      var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+      var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
         var _this = this;
 
         var transactionsUrl, params, response, text, json;
@@ -143,10 +153,16 @@ var BBCardBill = function () {
                   }
 
                   if (s.cabecalho === '    Compras/Pgto Contas Parc') {
-                    return s.celulas.slice(2).map(function (c) {
+                    return s.celulas.slice(2, -2).filter(function (c) {
+                      return c.componentes.length === 3;
+                    }).map(function (c) {
                       return {
                         type: 'installment',
-                        date: stringToDateInstallment(c.componentes[0].componentes[0].texto, _this.billDate.slice(2, 4)),
+                        date: stringToDateInstallment({
+                          description: c.componentes[1].componentes[0].texto,
+                          date: c.componentes[0].componentes[0].texto,
+                          billMonth: _this.billDate.slice(2, 4)
+                        }),
                         description: (0, _helpers.treatDescription)(c.componentes[1].componentes[0].texto),
                         amount: stringToAmount(c.componentes[2].componentes[0].texto)
                       };
@@ -167,7 +183,7 @@ var BBCardBill = function () {
       }));
 
       function getTransactions() {
-        return _ref2.apply(this, arguments);
+        return _ref3.apply(this, arguments);
       }
 
       return getTransactions;

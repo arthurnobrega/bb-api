@@ -32,10 +32,9 @@ describe('Savings', () => {
   });
 
   it('returns savings transactions', async () => {
-    const savings = await bb.savings.getAccounts();
-    const [first] = savings;
-    const transactions = await bb.savings.getTransactions({
-      variation: first.variation,
+    const savingsAccounts = await bb.savings.getAccounts();
+    const savingsAccount = savingsAccounts[0];
+    const transactions = await savingsAccount.getTransactions({
       year: 2018,
       month: 11,
     });

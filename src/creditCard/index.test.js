@@ -79,44 +79,50 @@ describe('Credit Card', () => {
 
     const transactions = await bill.getTransactions();
 
-    expect(transactions).toHaveLength(6);
+    expect(transactions).toHaveLength(7);
 
     expect(transactions).toMatchObject([
       {
         type: 'payment',
         amount: 1.0,
-        date: new Date(2018, 10, 22),
+        date: new Date(2018, 9, 22),
         description: 'PGTO',
       },
       {
         type: 'atSight',
         amount: -2.0,
-        date: new Date(2018, 10, 10),
+        date: new Date(2018, 9, 10),
         description: 'FARMACIA',
       },
       {
         type: 'atSight',
         amount: -3.0,
-        date: new Date(2018, 10, 11),
+        date: new Date(2018, 9, 11),
         description: 'LANCHONETE',
       },
       {
         type: 'installment',
         amount: -4.0,
-        date: new Date(2018, 10, 10),
+        date: new Date(2018, 9, 10),
         description: 'CASA HUA 08/10',
       },
       {
         type: 'installment',
         amount: -5.0,
-        date: new Date(2018, 10, 11),
+        date: new Date(2018, 9, 11),
         description: 'BLABS PARC 02/04',
       },
       {
         type: 'installment',
         amount: -6.0,
-        date: new Date(2018, 10, 12),
+        date: new Date(2018, 9, 12),
         description: 'PET PARC 01/02',
+      },
+      {
+        type: 'installment',
+        amount: -6.0,
+        date: new Date(2018, 9, 12),
+        description: 'ANTEC PET PARC 02/02',
       },
     ]);
   });
