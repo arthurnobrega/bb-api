@@ -26,13 +26,19 @@ function stringToDate(string) {
     year = `20${year}`;
   }
 
-  return new Date(year, month, day);
+  return new Date(year, parseInt(month, 10) - 1, day);
 }
 
-function stringToDateInstallment(string, month) {
-  const parts = string.split('/');
+function stringToDateInstallment({ date, description, billMonth }) {
+  const installment = description.match(/.*(\d{2,3})\/(\d{2,3}).*/)[1];
+  const parts = date.split('/');
   const day = parts[0];
+  let month = parseInt(parts[1], 10) + parseInt(installment, 10) - 1;
   const year = `20${parts[2]}`;
+
+  if (/^ANTEC /.test(description)) {
+    month = parseInt(billMonth, 10) - 1;
+  }
 
   return new Date(year, parseInt(month, 10) - 1, day);
 }
@@ -91,17 +97,21 @@ export default class BBCardBill {
         }
 
         if (s.cabecalho === '    Compras/Pgto Contas Parc') {
-          return s.celulas.slice(2).map(c => ({
-            type: 'installment',
-            date: stringToDateInstallment(
-              c.componentes[0].componentes[0].texto,
-              this.billDate.slice(2, 4),
-            ),
-            description: treatDescription(
-              c.componentes[1].componentes[0].texto,
-            ),
-            amount: stringToAmount(c.componentes[2].componentes[0].texto),
-          }));
+          return s.celulas
+            .slice(2, -2)
+            .filter(c => c.componentes.length === 3)
+            .map(c => ({
+              type: 'installment',
+              date: stringToDateInstallment({
+                description: c.componentes[1].componentes[0].texto,
+                date: c.componentes[0].componentes[0].texto,
+                billMonth: this.billDate.slice(2, 4),
+              }),
+              description: treatDescription(
+                c.componentes[1].componentes[0].texto,
+              ),
+              amount: stringToAmount(c.componentes[2].componentes[0].texto),
+            }));
         }
 
         return [];
