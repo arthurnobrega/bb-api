@@ -10,7 +10,65 @@ yarn add bb-api
 npm install bb-api --save
 ```
 
-## Using by command line
+## API Usage
+
+### Checking Account (Conta Corrente)
+
+```javascript
+import BB from 'bb-api';
+
+const bb = new BB();
+await bb.login({ branch: 'XXXXX', account: 'XXXXXXX', password: 'XXXXXXXX' });
+
+// Recover balance
+const checkingBalance = await bb.checking.getBalance();
+
+// Recover transactions in month
+const checkingTransactions = await bb.checking.getTransactions({
+  year: 2018,
+  month: 11,
+});
+```
+
+### Savings Account (Poupança)
+
+```javascript
+import BB from 'bb-api';
+
+const bb = new BB();
+await bb.login({ branch: 'xxxxxx', account: 'xxxxxxx', password: 'xxxxxxxx' });
+
+// Recover savings accounts available (variações, ex: 1, 51, etc)
+const savingsAccounts = await bb.savings.getAccounts();
+
+// Recover transactions from savings account in month
+const savingsTransactions = await savingsAccounts[0].getTransactions({
+  year: 2018,
+  month: 11,
+});
+```
+
+### Credit Card (Cartão de Crédito)
+
+```javascript
+import BB from 'bb-api';
+
+const bb = new BB();
+await bb.login({ branch: 'xxxxxx', account: 'xxxxxxx', password: 'xxxxxxxx' });
+
+// Recover list of available credit cards
+const creditCards = await bb.creditCard.getCards();
+
+// Recover bills of a credit card (faturas)
+const creditCardBills = await creditCards[0].getBills();
+
+// Recover transactions from specific bill
+const creditCardTransactions = await creditCardBills[0].getTransactions();
+```
+
+## Command line
+
+Clone the repository and follow the steps bellow:
 
 To use it via command line just execute the command below, replacing **XXXXXs** by your credentials:
 
@@ -115,62 +173,6 @@ and it will print in console the last data of your account:
     ...
   ],
 }
-```
-
-## API Usage
-
-### Checking Account (Conta Corrente)
-
-```javascript
-import BB from 'bb-api';
-
-const bb = new BB();
-await bb.login({ branch: 'XXXXX', account: 'XXXXXXX', password: 'XXXXXXXX' });
-
-// Recover balance
-const checkingBalance = await bb.checking.getBalance();
-
-// Recover transactions in month
-const checkingTransactions = await bb.checking.getTransactions({
-  year: 2018,
-  month: 11,
-});
-```
-
-### Savings Account (Poupança)
-
-```javascript
-import BB from 'bb-api';
-
-const bb = new BB();
-await bb.login({ branch: 'xxxxxx', account: 'xxxxxxx', password: 'xxxxxxxx' });
-
-// Recover savings accounts available (variações, ex: 1, 51, etc)
-const savingsAccounts = await bb.savings.getAccounts();
-
-// Recover transactions from savings account in month
-const savingsTransactions = await savingsAccounts[0].getTransactions({
-  year: 2018,
-  month: 11,
-});
-```
-
-### Credit Card (Cartão de Crédito)
-
-```javascript
-import BB from 'bb-api';
-
-const bb = new BB();
-await bb.login({ branch: 'xxxxxx', account: 'xxxxxxx', password: 'xxxxxxxx' });
-
-// Recover list of available credit cards
-const creditCards = await bb.creditCard.getCards();
-
-// Recover bills of a credit card (faturas)
-const creditCardBills = await creditCards[0].getBills();
-
-// Recover transactions from specific bill
-const creditCardTransactions = await creditCardBills[0].getTransactions();
 ```
 
 ## Contributing
