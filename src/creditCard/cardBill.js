@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import querystring from 'querystring';
 import LoginCookie from '../loginCookie';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from '../constants';
+import { treatDescription } from '../helpers';
 
 function stringToAmount(string) {
   return (
@@ -67,55 +68,44 @@ export default class BBCardBill {
 
     return json.conteiner.telas[0].sessoes
       .map(s => {
-        if (s.cabecalho === 'Lançamentos em processamento') {
-          return {
-            processing: s.celulas.map(c => ({
-              date: stringToDate(c.componentes[0].componentes[0].texto),
-              description: c.componentes[1].componentes[0].texto,
-              amount: stringToAmount(c.componentes[2].componentes[0].texto),
-            })),
-          };
-        }
-
         if (s.cabecalho === '    Pagamentos') {
-          return {
-            payment: s.celulas.slice(1).map(c => ({
-              date: stringToDate(c.componentes[0].componentes[0].texto),
-              description: c.componentes[1].componentes[0].texto,
-              amount: stringToAmount(c.componentes[2].componentes[0].texto),
-            })),
-          };
+          return s.celulas.slice(1).map(c => ({
+            type: 'payment',
+            date: stringToDate(c.componentes[0].componentes[0].texto),
+            description: treatDescription(
+              c.componentes[1].componentes[0].texto,
+            ),
+            amount: stringToAmount(c.componentes[2].componentes[0].texto),
+          }));
         }
 
         if (s.cabecalho === '    Compras a vista') {
-          return {
-            atSight: s.celulas.slice(1).map(c => ({
-              date: stringToDate(c.componentes[0].componentes[0].texto),
-              description: c.componentes[1].componentes[0].texto,
-              amount: stringToAmount(c.componentes[2].componentes[0].texto),
-            })),
-          };
+          return s.celulas.slice(1).map(c => ({
+            type: 'atSight',
+            date: stringToDate(c.componentes[0].componentes[0].texto),
+            description: treatDescription(
+              c.componentes[1].componentes[0].texto,
+            ),
+            amount: stringToAmount(c.componentes[2].componentes[0].texto),
+          }));
         }
 
         if (s.cabecalho === '    Compras/Pgto Contas Parc') {
-          return {
-            inInstallments: s.celulas.slice(2).map(c => ({
-              date: stringToDateInstallment(
-                c.componentes[0].componentes[0].texto,
-                this.billDate.slice(2, 4),
-              ),
-              description: c.componentes[1].componentes[0].texto,
-              amount: stringToAmount(c.componentes[2].componentes[0].texto),
-            })),
-          };
+          return s.celulas.slice(2).map(c => ({
+            type: 'installment',
+            date: stringToDateInstallment(
+              c.componentes[0].componentes[0].texto,
+              this.billDate.slice(2, 4),
+            ),
+            description: treatDescription(
+              c.componentes[1].componentes[0].texto,
+            ),
+            amount: stringToAmount(c.componentes[2].componentes[0].texto),
+          }));
         }
 
-        return {};
+        return [];
       })
-      .reduce((acc, p) => ({ ...acc, ...p }), {});
+      .reduce((transactions, session) => [...transactions, ...session], []);
   }
-
-  // return json.conteiner.telas[0].sessoes[0].celulas
-  //   .map(c => c.protocolo.parametros.filter(p => p[0] === 'dataFatura'))
-  //   .map(p => p[0][1]);
 }

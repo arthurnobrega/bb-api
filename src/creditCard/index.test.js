@@ -79,57 +79,44 @@ describe('Credit Card', () => {
 
     const transactions = await bill.getTransactions();
 
-    // expect(transactions).toHaveLength(4);
+    expect(transactions).toHaveLength(6);
 
-    expect(transactions.processing).toMatchObject([
+    expect(transactions).toMatchObject([
       {
-        amount: -41.06,
-        date: new Date(2018, 11, 30),
-        description: 'JURUBEBA',
-      },
-      {
-        amount: -30.58,
-        date: new Date(2018, 11, 30),
-        description: 'TORTERIA',
-      },
-    ]);
-
-    expect(transactions.payment).toMatchObject([
-      {
+        type: 'payment',
         amount: 1.0,
         date: new Date(2018, 10, 22),
         description: 'PGTO',
       },
-    ]);
-
-    expect(transactions.atSight).toMatchObject([
       {
+        type: 'atSight',
         amount: -2.0,
         date: new Date(2018, 10, 10),
         description: 'FARMACIA',
       },
       {
+        type: 'atSight',
         amount: -3.0,
         date: new Date(2018, 10, 11),
         description: 'LANCHONETE',
       },
-    ]);
-
-    expect(transactions.inInstallments).toMatchObject([
       {
+        type: 'installment',
         amount: -4.0,
         date: new Date(2018, 10, 10),
-        description: 'CASA    HUA 08/10',
+        description: 'CASA HUA 08/10',
       },
       {
+        type: 'installment',
         amount: -5.0,
         date: new Date(2018, 10, 11),
         description: 'BLABS PARC 02/04',
       },
       {
+        type: 'installment',
         amount: -6.0,
         date: new Date(2018, 10, 12),
-        description: 'PET    PARC 01/02',
+        description: 'PET PARC 01/02',
       },
     ]);
   });
