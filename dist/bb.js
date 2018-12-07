@@ -29,6 +29,10 @@ var _querystring = require('querystring');
 
 var _querystring2 = _interopRequireDefault(_querystring);
 
+var _loginCookie = require('./loginCookie');
+
+var _loginCookie2 = _interopRequireDefault(_loginCookie);
+
 var _constants = require('./constants');
 
 var _checking = require('./checking');
@@ -38,6 +42,10 @@ var _checking2 = _interopRequireDefault(_checking);
 var _savings = require('./savings');
 
 var _savings2 = _interopRequireDefault(_savings);
+
+var _creditCard = require('./creditCard');
+
+var _creditCard2 = _interopRequireDefault(_creditCard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -82,9 +90,9 @@ var refreshHash = function () {
 var BB = function () {
   function BB() {
     (0, _classCallCheck3.default)(this, BB);
-    this.loginCookie = null;
     this.checking = null;
     this.savings = null;
+    this.creditCard = null;
   }
 
   (0, _createClass3.default)(BB, [{
@@ -125,7 +133,7 @@ var BB = function () {
                 response = _context2.sent;
 
 
-                this.loginCookie = response.headers.get('set-cookie');
+                _loginCookie2.default.setGlobal(response.headers.get('set-cookie'));
 
                 _context2.next = 11;
                 return response.text();
@@ -135,12 +143,13 @@ var BB = function () {
                 _JSON$parse = JSON.parse(text), login = _JSON$parse.login;
 
 
-                this.checking = new _checking2.default(this.loginCookie);
-                this.savings = new _savings2.default(this.loginCookie);
+                this.checking = new _checking2.default();
+                this.savings = new _savings2.default();
+                this.creditCard = new _creditCard2.default();
 
                 return _context2.abrupt('return', login);
 
-              case 16:
+              case 17:
               case 'end':
                 return _context2.stop();
             }

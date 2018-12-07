@@ -13,17 +13,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 if (require.main === module) {
   var bb = new _bb2.default();
 
-  bb.login({ branch: 'xxxxx', account: 'xxxxxx', password: 'xxxxxxxx' }).then(function () {
+  bb.login({ branch: '34770', account: '1108409', password: '07029519' }).then(function () {
     return bb.checking.getBalance();
-  }).then(function (balance) {
+  })
+  // eslint-disable-next-line no-console
+  .then(function (balance) {
     return console.log(balance);
   }).then(function () {
-    return bb.checking.getTransactions({ year: 2018, month: 10 });
-  }).then(function (transactions) {
+    return bb.checking.getTransactions({ year: 2018, month: 11 });
+  })
+  // eslint-disable-next-line no-console
+  .then(function (transactions) {
     return console.log(transactions);
   }).then(function () {
-    return bb.savings.getTransactions({ variation: 51, year: 2018, month: 10 });
-  }).then(function (transactions) {
+    return bb.savings.getTransactions({ variation: 51, year: 2018, month: 11 });
+  })
+  // eslint-disable-next-line no-console
+  .then(function (transactions) {
     return console.log(transactions);
   });
 }

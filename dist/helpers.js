@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getMonthNumber = getMonthNumber;
-exports.mountDate = mountDate;
 exports.parseAmountString = parseAmountString;
 exports.treatDescription = treatDescription;
 function getMonthNumber(monthName) {
@@ -24,10 +23,6 @@ function getMonthNumber(monthName) {
   };
 
   return monthNumbers[monthName];
-}
-
-function mountDate(year, monthName, day) {
-  return new Date(year, getMonthNumber(monthName), day);
 }
 
 function parseAmountString(amountString) {
