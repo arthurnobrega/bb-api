@@ -1,6 +1,6 @@
 {
   "name": "bb-api",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Unofficial node.js implementation of Banco do Brasil's mobile API",
   "main": "dist/index.js",
   "author": "Arthur Nobrega",
@@ -41,7 +41,7 @@
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^22.1.1",
+    "eslint-plugin-jest": "^22.1.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "jest": "^23.6.0",
@@ -50,6 +50,7 @@
     "regenerator-runtime": "^0.13.1"
   },
   "dependencies": {
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "yargs": "^12.0.5"
   }
 }

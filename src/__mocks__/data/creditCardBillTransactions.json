@@ -1035,6 +1035,50 @@
                         "visivel": true,
                         "tamanhoDoTexto": "PEQUENO",
                         "TIPO": "texto",
+                        "texto": "",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Compras por mala direta/telefone",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
                         "texto": "10/03/18",
                         "alinhamentoDoTexto": "ESQUERDA",
                         "formato": "BASICO"
@@ -1188,6 +1232,186 @@
                         "tamanhoDoTexto": "PEQUENO",
                         "TIPO": "texto",
                         "texto": "R$ 6,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "12/10/18",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "ANTEC PET    PARC 02/02",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 6,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Subtotal",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 8.454,77",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Total",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 8.454,77",
                         "alinhamentoDoTexto": "DIREITA",
                         "formato": "BASICO"
                       }
