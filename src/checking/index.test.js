@@ -26,12 +26,39 @@ describe('Checking', () => {
     await bb.login(credentials);
     const transactions = await bb.checking.getTransactions({
       year: 2018,
-      month: 10,
+      month: 4,
     });
 
-    expect(transactions.length).toBeGreaterThan(0);
-    expect(transactions[0]).toHaveProperty('date');
-    expect(transactions[0]).toHaveProperty('amount');
-    expect(transactions[0]).toHaveProperty('description');
+    expect(transactions).toHaveLength(5);
+
+    expect(transactions).toMatchObject([
+      {
+        date: new Date(2018, 3, 16),
+        amount: -82.5,
+        description:
+          'Transferência enviada 15/04 1100 110540-1 JOAO DE ALMEIDA',
+      },
+      {
+        date: new Date(2018, 3, 17),
+        amount: -10,
+        description: 'Transferência enviada 17/04 8125 950100-9 MARA GARGIA AL',
+      },
+      {
+        date: new Date(2018, 3, 23),
+        amount: -374.56,
+        description: 'Compra com Cartão 21/04 20:00 SUPERMERCADO 061 AS',
+      },
+      {
+        date: new Date(2018, 3, 27),
+        amount: -50,
+        description:
+          'Transferência enviada 27/04 1234 123454-0 JOAO DE ALMEIDA',
+      },
+      {
+        date: new Date(2018, 3, 28),
+        amount: 1107.42,
+        description: 'Transferência recebida 28/04 3455 456123-1 IBM',
+      },
+    ]);
   });
 });
