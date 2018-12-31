@@ -48,7 +48,7 @@ var _helpers = require('../helpers');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function stringToAmount(string) {
-  return -1 * parseFloat(string.replace('R$ ', '').replace('.', '').replace(',', '.'));
+  return -1 * parseFloat(string.split(' ').slice(1).join().replace('.', '').replace(',', '.'));
 }
 
 function stringToDate(string) {
@@ -131,40 +131,57 @@ var BBCardBill = function () {
                 json = JSON.parse(text);
                 return _context.abrupt('return', json.conteiner.telas[0].sessoes.map(function (s) {
                   if (s.cabecalho === '    Pagamentos') {
-                    return s.celulas.slice(1).map(function (c) {
+                    return s.celulas.slice(1).filter(function (c) {
+                      return c.componentes.length === 3 && c.componentes[0].componentes[0].texto !== '' && c.componentes[1].componentes[0].texto !== '' && c.componentes[2].componentes[0].texto !== '';
+                    }).map(function (c) {
+                      var date = c.componentes[0].componentes[0].texto;
+                      var description = c.componentes[1].componentes[0].texto;
+                      var amount = c.componentes[2].componentes[0].texto;
+
                       return {
                         type: 'payment',
-                        date: stringToDate(c.componentes[0].componentes[0].texto),
-                        description: (0, _helpers.treatDescription)(c.componentes[1].componentes[0].texto),
-                        amount: stringToAmount(c.componentes[2].componentes[0].texto)
+                        date: stringToDate(date),
+                        description: (0, _helpers.treatDescription)(description),
+                        amount: stringToAmount(amount)
                       };
                     });
                   }
 
                   if (s.cabecalho === '    Compras a vista') {
-                    return s.celulas.slice(1).map(function (c) {
+                    return s.celulas.slice(1).filter(function (c) {
+                      return c.componentes.length === 3 && c.componentes[0].componentes[0].texto !== '' && c.componentes[1].componentes[0].texto !== '' && c.componentes[2].componentes[0].texto !== '';
+                    }).map(function (c) {
+                      var date = c.componentes[0].componentes[0].texto;
+                      var description = c.componentes[1].componentes[0].texto;
+                      var amount = c.componentes[2].componentes[0].texto;
+                      var currency = amount.split(' ')[0];
+
                       return {
                         type: 'atSight',
-                        date: stringToDate(c.componentes[0].componentes[0].texto),
-                        description: (0, _helpers.treatDescription)(c.componentes[1].componentes[0].texto),
-                        amount: stringToAmount(c.componentes[2].componentes[0].texto)
+                        date: stringToDate(date),
+                        description: currency !== 'R$' ? (0, _helpers.treatDescription)(description, currency) : (0, _helpers.treatDescription)(description),
+                        amount: stringToAmount(amount)
                       };
                     });
                   }
 
                   if (s.cabecalho === '    Compras/Pgto Contas Parc') {
                     return s.celulas.slice(2, -2).filter(function (c) {
-                      return c.componentes.length === 3;
+                      return c.componentes.length === 3 && c.componentes[0].componentes[0].texto !== '' && c.componentes[1].componentes[0].texto !== '' && c.componentes[2].componentes[0].texto !== '';
                     }).map(function (c) {
+                      var date = c.componentes[0].componentes[0].texto;
+                      var description = c.componentes[1].componentes[0].texto;
+                      var amount = c.componentes[2].componentes[0].texto;
+
                       return {
                         type: 'installment',
                         date: stringToDateInstallment({
-                          description: c.componentes[1].componentes[0].texto,
-                          date: c.componentes[0].componentes[0].texto,
+                          description: description,
+                          date: date,
                           billMonth: _this.billDate.slice(2, 4)
                         }),
-                        description: (0, _helpers.treatDescription)(c.componentes[1].componentes[0].texto),
-                        amount: stringToAmount(c.componentes[2].componentes[0].texto)
+                        description: (0, _helpers.treatDescription)(description),
+                        amount: stringToAmount(amount)
                       };
                     });
                   }

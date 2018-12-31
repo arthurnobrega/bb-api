@@ -9,7 +9,9 @@ function stringToAmount(string) {
     -1 *
     parseFloat(
       string
-        .replace('R$ ', '')
+        .split(' ')
+        .slice(1)
+        .join()
         .replace('.', '')
         .replace(',', '.'),
     )
@@ -75,43 +77,83 @@ export default class BBCardBill {
     return json.conteiner.telas[0].sessoes
       .map(s => {
         if (s.cabecalho === '    Pagamentos') {
-          return s.celulas.slice(1).map(c => ({
-            type: 'payment',
-            date: stringToDate(c.componentes[0].componentes[0].texto),
-            description: treatDescription(
-              c.componentes[1].componentes[0].texto,
-            ),
-            amount: stringToAmount(c.componentes[2].componentes[0].texto),
-          }));
+          return s.celulas
+            .slice(1)
+            .filter(
+              c =>
+                c.componentes.length === 3 &&
+                c.componentes[0].componentes[0].texto !== '' &&
+                c.componentes[1].componentes[0].texto !== '' &&
+                c.componentes[2].componentes[0].texto !== '',
+            )
+            .map(c => {
+              const date = c.componentes[0].componentes[0].texto;
+              const description = c.componentes[1].componentes[0].texto;
+              const amount = c.componentes[2].componentes[0].texto;
+
+              return {
+                type: 'payment',
+                date: stringToDate(date),
+                description: treatDescription(description),
+                amount: stringToAmount(amount),
+              };
+            });
         }
 
         if (s.cabecalho === '    Compras a vista') {
-          return s.celulas.slice(1).map(c => ({
-            type: 'atSight',
-            date: stringToDate(c.componentes[0].componentes[0].texto),
-            description: treatDescription(
-              c.componentes[1].componentes[0].texto,
-            ),
-            amount: stringToAmount(c.componentes[2].componentes[0].texto),
-          }));
+          return s.celulas
+            .slice(1)
+            .filter(
+              c =>
+                c.componentes.length === 3 &&
+                c.componentes[0].componentes[0].texto !== '' &&
+                c.componentes[1].componentes[0].texto !== '' &&
+                c.componentes[2].componentes[0].texto !== '',
+            )
+            .map(c => {
+              const date = c.componentes[0].componentes[0].texto;
+              const description = c.componentes[1].componentes[0].texto;
+              const amount = c.componentes[2].componentes[0].texto;
+              const currency = amount.split(' ')[0];
+
+              return {
+                type: 'atSight',
+                date: stringToDate(date),
+                description:
+                  currency !== 'R$'
+                    ? treatDescription(description, currency)
+                    : treatDescription(description),
+                amount: stringToAmount(amount),
+              };
+            });
         }
 
         if (s.cabecalho === '    Compras/Pgto Contas Parc') {
           return s.celulas
             .slice(2, -2)
-            .filter(c => c.componentes.length === 3)
-            .map(c => ({
-              type: 'installment',
-              date: stringToDateInstallment({
-                description: c.componentes[1].componentes[0].texto,
-                date: c.componentes[0].componentes[0].texto,
-                billMonth: this.billDate.slice(2, 4),
-              }),
-              description: treatDescription(
-                c.componentes[1].componentes[0].texto,
-              ),
-              amount: stringToAmount(c.componentes[2].componentes[0].texto),
-            }));
+            .filter(
+              c =>
+                c.componentes.length === 3 &&
+                c.componentes[0].componentes[0].texto !== '' &&
+                c.componentes[1].componentes[0].texto !== '' &&
+                c.componentes[2].componentes[0].texto !== '',
+            )
+            .map(c => {
+              const date = c.componentes[0].componentes[0].texto;
+              const description = c.componentes[1].componentes[0].texto;
+              const amount = c.componentes[2].componentes[0].texto;
+
+              return {
+                type: 'installment',
+                date: stringToDateInstallment({
+                  description,
+                  date,
+                  billMonth: this.billDate.slice(2, 4),
+                }),
+                description: treatDescription(description),
+                amount: stringToAmount(amount),
+              };
+            });
         }
 
         return [];

@@ -35,6 +35,10 @@ function parseAmountString(amountString) {
 }
 
 function treatDescription(description) {
-  return description.replace('\n', ' ').replace(/ +/g, ' ');
+  var currency = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+  var treatedDescription = description.replace('\n', ' ').replace(/ +/g, ' ');
+
+  return currency ? treatedDescription + ' (' + currency + ')' : treatedDescription;
 }
 //# sourceMappingURL=helpers.js.map

@@ -31,6 +31,8 @@ export function parseAmountString(amountString) {
   return isPositive ? amount : -amount;
 }
 
-export function treatDescription(description) {
-  return description.replace('\n', ' ').replace(/ +/g, ' ');
+export function treatDescription(description, currency = null) {
+  const treatedDescription = description.replace('\n', ' ').replace(/ +/g, ' ');
+
+  return currency ? `${treatedDescription} (${currency})` : treatedDescription;
 }
