@@ -36,12 +36,24 @@ export default class BBSavingsAccount {
       s => s.cabecalho && s.cabecalho.includes('Mês referência'),
     );
     return session.celulas
-      .map(c => c.componentes)
-      .filter(comp => comp[0].componentes[0].texto !== 'Dia')
-      .map(c => ({
-        date: new Date(year, month - 1, c[0].componentes[0].texto),
-        description: treatDescription(c[1].componentes[0].texto),
-        amount: parseAmountString(c[2].componentes[0].texto),
-      }));
+      .filter(
+        c =>
+          c.componentes.length === 3 &&
+          c.componentes[0].componentes[0].texto !== '' &&
+          c.componentes[1].componentes[0].texto !== '' &&
+          c.componentes[2].componentes[0].texto !== '',
+      )
+      .filter(c => c.componentes[0].componentes[0].texto !== 'Dia')
+      .map(c => {
+        const date = c.componentes[0].componentes[0].texto;
+        const description = c.componentes[1].componentes[0].texto;
+        const amount = c.componentes[2].componentes[0].texto;
+
+        return {
+          date: new Date(year, month - 1, date),
+          description: treatDescription(description),
+          amount: parseAmountString(amount),
+        };
+      });
   }
 }

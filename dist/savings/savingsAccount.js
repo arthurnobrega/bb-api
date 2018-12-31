@@ -92,15 +92,19 @@ var BBSavingsAccount = function () {
                 session = json.conteiner.telas[0].sessoes.find(function (s) {
                   return s.cabecalho && s.cabecalho.includes('Mês referência');
                 });
-                return _context.abrupt('return', session.celulas.map(function (c) {
-                  return c.componentes;
-                }).filter(function (comp) {
-                  return comp[0].componentes[0].texto !== 'Dia';
+                return _context.abrupt('return', session.celulas.filter(function (c) {
+                  return c.componentes.length === 3 && c.componentes[0].componentes[0].texto !== '' && c.componentes[1].componentes[0].texto !== '' && c.componentes[2].componentes[0].texto !== '';
+                }).filter(function (c) {
+                  return c.componentes[0].componentes[0].texto !== 'Dia';
                 }).map(function (c) {
+                  var date = c.componentes[0].componentes[0].texto;
+                  var description = c.componentes[1].componentes[0].texto;
+                  var amount = c.componentes[2].componentes[0].texto;
+
                   return {
-                    date: new Date(year, month - 1, c[0].componentes[0].texto),
-                    description: (0, _helpers.treatDescription)(c[1].componentes[0].texto),
-                    amount: (0, _helpers.parseAmountString)(c[2].componentes[0].texto)
+                    date: new Date(year, month - 1, date),
+                    description: (0, _helpers.treatDescription)(description),
+                    amount: (0, _helpers.parseAmountString)(amount)
                   };
                 }));
 
