@@ -120,7 +120,9 @@ var BB = function () {
                   dependenciaOrigem: branch,
                   numeroContratoOrigem: account,
                   senhaConta: password,
-                  titularidade: '1'
+                  titularidade: '1',
+                  apelido: 'NickRandom.123456',
+                  idDispositivo: '2131296671'
                 };
                 _context2.next = 7;
                 return (0, _nodeFetch2.default)('' + _constants.BASE_ENDPOINT + loginUrl, {
