@@ -43,10 +43,18 @@ var _helpers = require('../helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function isCurrentMonth(_ref) {
+  var year = _ref.year,
+      month = _ref.month;
+
+  var now = new Date();
+  return now.getFullYear() === parseInt(year, 10) && now.getMonth() === parseInt(month - 1, 10);
+}
+
 var BBSavingsAccount = function () {
-  function BBSavingsAccount(_ref) {
-    var variation = _ref.variation,
-        description = _ref.description;
+  function BBSavingsAccount(_ref2) {
+    var variation = _ref2.variation,
+        description = _ref2.description;
     (0, _classCallCheck3.default)(this, BBSavingsAccount);
 
     this.variation = variation;
@@ -56,9 +64,9 @@ var BBSavingsAccount = function () {
   (0, _createClass3.default)(BBSavingsAccount, [{
     key: 'getTransactions',
     value: function () {
-      var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref3) {
-        var year = _ref3.year,
-            month = _ref3.month;
+      var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref4) {
+        var year = _ref4.year,
+            month = _ref4.month;
         var pad, accountsUrl, params, response, text, json, session;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
@@ -70,23 +78,30 @@ var BBSavingsAccount = function () {
 
                 accountsUrl = 'tela/ExtratoDePoupanca/menuPeriodo';
                 params = {
-                  metodo: 'mesAnterior',
-                  variacao: this.variation,
-                  periodo: '01/' + pad(month) + '/' + year
+                  variacao: this.variation
                 };
-                _context.next = 5;
+
+
+                if (!isCurrentMonth({ year: year, month: month })) {
+                  params = (0, _extends3.default)({}, params, {
+                    metodo: 'mesAnterior',
+                    periodo: '01/' + pad(month) + '/' + year
+                  });
+                }
+
+                _context.next = 6;
                 return (0, _nodeFetch2.default)('' + _constants.BASE_ENDPOINT + accountsUrl + '?' + _querystring2.default.stringify(params), {
                   headers: (0, _extends3.default)({}, _constants.DEFAULT_HEADERS, {
                     cookie: _loginCookie2.default.getGlobal()
                   })
                 });
 
-              case 5:
+              case 6:
                 response = _context.sent;
-                _context.next = 8;
+                _context.next = 9;
                 return response.text();
 
-              case 8:
+              case 9:
                 text = _context.sent;
                 json = JSON.parse(text);
                 session = json.conteiner.telas[0].sessoes.find(function (s) {
@@ -108,7 +123,7 @@ var BBSavingsAccount = function () {
                   };
                 }));
 
-              case 12:
+              case 13:
               case 'end':
                 return _context.stop();
             }
@@ -117,7 +132,7 @@ var BBSavingsAccount = function () {
       }));
 
       function getTransactions(_x) {
-        return _ref2.apply(this, arguments);
+        return _ref3.apply(this, arguments);
       }
 
       return getTransactions;

@@ -4,6 +4,14 @@ import LoginCookie from '../loginCookie';
 import { BASE_ENDPOINT, DEFAULT_HEADERS } from '../constants';
 import { treatDescription, parseAmountString } from '../helpers';
 
+function isCurrentMonth({ year, month }) {
+  const now = new Date();
+  return (
+    now.getFullYear() === parseInt(year, 10) &&
+    now.getMonth() === parseInt(month - 1, 10)
+  );
+}
+
 export default class BBSavingsAccount {
   constructor({ variation, description }) {
     this.variation = variation;
@@ -13,11 +21,18 @@ export default class BBSavingsAccount {
   async getTransactions({ year, month }) {
     const pad = s => s.toString().padStart('0', 2);
     const accountsUrl = 'tela/ExtratoDePoupanca/menuPeriodo';
-    const params = {
-      metodo: 'mesAnterior',
+
+    let params = {
       variacao: this.variation,
-      periodo: `01/${pad(month)}/${year}`,
     };
+
+    if (!isCurrentMonth({ year, month })) {
+      params = {
+        ...params,
+        metodo: 'mesAnterior',
+        periodo: `01/${pad(month)}/${year}`,
+      };
+    }
 
     const response = await fetch(
       `${BASE_ENDPOINT}${accountsUrl}?${querystring.stringify(params)}`,
