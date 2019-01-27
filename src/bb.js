@@ -38,6 +38,8 @@ export default class BB {
       numeroContratoOrigem: account,
       senhaConta: password,
       titularidade: '1',
+      apelido: 'NickRandom.123456',
+      idDispositivo: '2131296671',
     };
 
     const response = await fetch(`${BASE_ENDPOINT}${loginUrl}`, {
