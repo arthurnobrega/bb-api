@@ -67,7 +67,7 @@ function stringToDate(string) {
 function stringToDateInstallment(_ref) {
   var date = _ref.date,
       description = _ref.description,
-      billMonth = _ref.billMonth;
+      billDate = _ref.billDate;
 
   var installment = description.match(/.*(\d{2,3})\/(\d{2,3}).*/)[1];
   var parts = date.split('/');
@@ -76,7 +76,7 @@ function stringToDateInstallment(_ref) {
   var year = '20' + parts[2];
 
   if (/^ANTEC /.test(description)) {
-    month = parseInt(billMonth, 10) - 1;
+    month = parseInt(billDate.slice(2, 4), 10) - 1;
   }
 
   return new Date(year, parseInt(month, 10) - 1, day);
@@ -86,12 +86,14 @@ var BBCardBill = function () {
   function BBCardBill(_ref2) {
     var cardAccountNumber = _ref2.cardAccountNumber,
         billId = _ref2.billId,
-        billDate = _ref2.billDate;
+        billDate = _ref2.billDate,
+        status = _ref2.status;
     (0, _classCallCheck3.default)(this, BBCardBill);
 
     this.cardAccountNumber = cardAccountNumber;
     this.billId = billId;
     this.billDate = billDate;
+    this.status = status;
   }
 
   (0, _createClass3.default)(BBCardBill, [{
@@ -106,13 +108,23 @@ var BBCardBill = function () {
             switch (_context.prev = _context.next) {
               case 0:
                 transactionsUrl = 'tela/ExtratoFatura/extrato';
-                params = {
-                  numeroContaCartao: this.cardAccountNumber,
-                  sequencialFatura: this.billId,
-                  dataFatura: this.billDate,
-                  tipoExtrato: 'F'
-                };
-                _context.next = 4;
+                params = {};
+
+
+                if (this.status === 'opened') {
+                  params = {
+                    numeroContaCartao: this.cardAccountNumber
+                  };
+                } else {
+                  params = {
+                    numeroContaCartao: this.cardAccountNumber,
+                    sequencialFatura: this.billId,
+                    dataFatura: this.billDate,
+                    tipoExtrato: 'F'
+                  };
+                }
+
+                _context.next = 5;
                 return (0, _nodeFetch2.default)('' + _constants.BASE_ENDPOINT + transactionsUrl, {
                   headers: (0, _extends3.default)({}, _constants.DEFAULT_HEADERS, {
                     cookie: _loginCookie2.default.getGlobal()
@@ -121,16 +133,16 @@ var BBCardBill = function () {
                   body: _querystring2.default.stringify(params)
                 });
 
-              case 4:
+              case 5:
                 response = _context.sent;
-                _context.next = 7;
+                _context.next = 8;
                 return response.text();
 
-              case 7:
+              case 8:
                 text = _context.sent;
                 json = JSON.parse(text);
                 return _context.abrupt('return', json.conteiner.telas[0].sessoes.map(function (s) {
-                  if (s.cabecalho === '    Pagamentos') {
+                  if (s.cabecalho && s.cabecalho.trim() === 'Pagamentos') {
                     return s.celulas.slice(1).filter(function (c) {
                       return c.componentes.length === 3 && c.componentes[0].componentes[0].texto !== '' && c.componentes[1].componentes[0].texto !== '' && c.componentes[2].componentes[0].texto !== '';
                     }).map(function (c) {
@@ -147,7 +159,7 @@ var BBCardBill = function () {
                     });
                   }
 
-                  if (s.cabecalho === '    Compras a vista') {
+                  if (s.cabecalho && s.cabecalho.trim() === 'Compras a vista') {
                     return s.celulas.slice(1).filter(function (c) {
                       return c.componentes.length === 3 && c.componentes[0].componentes[0].texto !== '' && c.componentes[1].componentes[0].texto !== '' && c.componentes[2].componentes[0].texto !== '';
                     }).map(function (c) {
@@ -165,7 +177,7 @@ var BBCardBill = function () {
                     });
                   }
 
-                  if (s.cabecalho === '    Compras/Pgto Contas Parc') {
+                  if (s.cabecalho && s.cabecalho.trim() === 'Compras/Pgto Contas Parc') {
                     return s.celulas.slice(2, -2).filter(function (c) {
                       return c.componentes.length === 3 && c.componentes[0].componentes[0].texto !== '' && c.componentes[1].componentes[0].texto !== '' && c.componentes[2].componentes[0].texto !== '';
                     }).map(function (c) {
@@ -178,7 +190,7 @@ var BBCardBill = function () {
                         date: stringToDateInstallment({
                           description: description,
                           date: date,
-                          billMonth: _this.billDate.slice(2, 4)
+                          billDate: _this.billDate
                         }),
                         description: (0, _helpers.treatDescription)(description),
                         amount: stringToAmount(amount)
@@ -191,7 +203,7 @@ var BBCardBill = function () {
                   return [].concat((0, _toConsumableArray3.default)(transactions), (0, _toConsumableArray3.default)(session));
                 }, []));
 
-              case 10:
+              case 11:
               case 'end':
                 return _context.stop();
             }

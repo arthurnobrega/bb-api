@@ -1,0 +1,1469 @@
+{
+  "conteiner": {
+    "telas": [
+      {
+        "idRandomico": 111111111,
+        "titulo": "Extrato Fatura do Cartão",
+        "orientacoesSuportadas": [
+          [
+            "LANDSCAPE_LEFT",
+            "LANDSCAPE_RIGHT",
+            "PORTRAIT",
+            "PORTRAIT_UPSIDE_DOWN"
+          ]
+        ],
+        "atalho": false,
+        "offline": false,
+        "parametrosDeSessao": [],
+        "testeira": [],
+        "opcoesDeContexto": [],
+        "menuDeRodape": {
+          "visivel": true,
+          "TIPO": "menuDeRodape",
+          "itens": []
+        },
+        "exibirMenuDeRodape": "UtilizarEstadoAnterior",
+        "botaoVoltar": true,
+        "listaProtocoloRetorno": [
+          {
+            "TIPO": "ATUALIZAHOME"
+          }
+        ],
+        "TIPO": "tabela",
+        "escondeMenu": false,
+        "sessoes": [
+          {
+            "TIPO": "sessao",
+            "cabecalho": "Fatura",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "Faturas Fechadas",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ExtratoFatura/mesAnterior?numeroContaCartao=12312312&sequencialFatura=999999999",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ExtratoFatura/mesAnterior",
+                  "parametros": [
+                    ["numeroContaCartao", "12312312"],
+                    ["sequencialFatura", "999999999"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "TIPO": "texto",
+                    "texto": "Contestar Transação",
+                    "formato": "BASICO"
+                  }
+                ],
+                "acao": "tela/ContestarTransacaoCartao/entrada?numeroContaCartao=12312312&sequencialFatura=999999999",
+                "protocolo": {
+                  "TIPO": "ACAO",
+                  "acao": "tela/ContestarTransacaoCartao/entrada",
+                  "parametros": [
+                    ["numeroContaCartao", "12312312"],
+                    ["sequencialFatura", "999999999"]
+                  ]
+                },
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "cabecalho": "Lançamentos futuros",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "NORMAL",
+                        "TIPO": "texto",
+                        "texto": "Cartão",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.3",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.05",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "NORMAL",
+                        "TIPO": "texto",
+                        "texto": "OUROCARD PLATINUM ESTILO VISA",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.65",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "NORMAL",
+                        "TIPO": "texto",
+                        "texto": "Número Cartão",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.3",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.05",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "NORMAL",
+                        "TIPO": "texto",
+                        "texto": "1234.****.****.4321",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.65",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "NORMAL",
+                        "TIPO": "texto",
+                        "texto": "Nome",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.3",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.05",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "NORMAL",
+                        "TIPO": "texto",
+                        "texto": "ROBERTO A TEIXEIRA",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.65",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "cabecalho": "01 - ROBERTO A TEIXEIRA",
+            "celulas": [],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "cabecalho": "    Pagamentos",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Data",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Transacoes",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Valor",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "02/05/19",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "PGTO DEBITO CONTA 1234 000005879  200",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ -1.634,91",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "cabecalho": "    Compras a vista",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Data",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Transacoes",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Valor",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "20/05/19",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "SPOLETO                NOVA IORQUE",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 46,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "20/05/19",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "SUPERMERCADOS NOVA IORQUE",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 44,30",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "20/05/19",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "IFOOD*IFOOD            MIAMI",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 39,80",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "cabecalho": "    Compras/Pgto Contas Parc",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Data",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Transacoes",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Valor",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Compras diversas",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "03/05/19",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "YOUTUBE D PARC 01/12 SAO PAULO",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 177,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "10/03/19",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "TESTE DF ASA PARC 03/03 NOVA IORQUE",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 155,36",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Fool",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "29/04/19",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "VITALIDADE      PARC 01/04 NOVA IORQUE",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 300,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Subtotal",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 3.102,12",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.22",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Total",
+                        "alinhamentoDoTexto": "ESQUERDA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.50",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "R$ 3.102,12",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.28",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "cabecalho": "Encargos e IOF",
+            "celulas": [
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "tamanhoDoTexto": "NORMAL",
+                    "TIPO": "texto",
+                    "texto": "Encargos",
+                    "formato": "BASICO"
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Retiradas na função crédito",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.775",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.025",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "0,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.2",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Uso do limite de crédito rotativo",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.775",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.025",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "0,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.2",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Pagamento de contas à vista",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.775",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.025",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "0,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.2",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "visivel": true,
+                    "tamanhoDoTexto": "NORMAL",
+                    "TIPO": "texto",
+                    "texto": "IOF",
+                    "formato": "BASICO"
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Retiradas e uso do limite de crédito rotativo",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.775",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.025",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "0,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.2",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              },
+              {
+                "TIPO": "celula",
+                "componentes": [
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "Pagamento de contas à vista",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.775",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "TIPO": "texto",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.025",
+                    "exibir": "ALL",
+                    "header": false
+                  },
+                  {
+                    "TIPO": "divisao",
+                    "componentes": [
+                      {
+                        "visivel": true,
+                        "tamanhoDoTexto": "PEQUENO",
+                        "TIPO": "texto",
+                        "texto": "0,00",
+                        "alinhamentoDoTexto": "DIREITA",
+                        "formato": "BASICO"
+                      }
+                    ],
+                    "largura": "0.2",
+                    "exibir": "ALL",
+                    "header": false
+                  }
+                ],
+                "esconderFundo": false,
+                "executaValidacao": false,
+                "ordenarPor": false,
+                "desenhaLinha": true,
+                "visivel": true,
+                "colapsado": false,
+                "alturaMinimaDaCelula": 0
+              }
+            ],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": false
+          },
+          {
+            "TIPO": "sessao",
+            "celulas": [],
+            "ordenavel": false,
+            "segmentado": false,
+            "estilo": "CARD",
+            "apresentaTesteiraTransacaoEfetivadaMobile30": true
+          }
+        ]
+      }
+    ],
+    "leiautes": [],
+    "deslizante": false
+  }
+}

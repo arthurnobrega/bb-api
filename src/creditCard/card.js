@@ -33,7 +33,7 @@ export default class BBCard {
     const text = await response.text();
     const json = JSON.parse(text);
 
-    return json.conteiner.telas[0].sessoes[0].celulas
+    const bills = json.conteiner.telas[0].sessoes[0].celulas
       .map(c =>
         c.protocolo.parametros
           .map(p => ({ [p[0]]: p[1] }))
@@ -45,7 +45,25 @@ export default class BBCard {
             cardAccountNumber: this.cardAccountNumber,
             billId: p.sequencialFatura,
             billDate: p.dataFatura,
+            status: 'closed',
           }),
       );
+
+    const openedBillDate =
+      bills[0].billDate.slice(0, 2) +
+      (parseInt(bills[0].billDate.slice(2, 4), 10) + 1)
+        .toString()
+        .padStart(2, '0') +
+      bills[0].billDate.slice(4, 8);
+
+    bills.unshift(
+      new BBCardBill({
+        cardAccountNumber: bills[0].cardAccountNumber,
+        billDate: openedBillDate,
+        status: 'opened',
+      }),
+    );
+
+    return bills;
   }
 }

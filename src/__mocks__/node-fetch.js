@@ -7,8 +7,9 @@ import savingsTransactions from './data/savingsTransactions.json';
 import creditCardList from './data/creditCardList.json';
 import creditCardBills from './data/creditCardBills.json';
 import creditCardBillTransactions from './data/creditCardBillTransactions.json';
+import creditCardCurrentBillTransactions from './data/creditCardCurrentBillTransactions.json';
 
-export default function fetch(url, { headers }) {
+export default function fetch(url, { headers, body }) {
   let textResponse = '';
   let headersReponse = {};
 
@@ -37,7 +38,11 @@ export default function fetch(url, { headers }) {
     } else if (/tela\/ExtratoFatura\/mesAnterior/.test(url)) {
       textResponse = creditCardBills;
     } else if (/tela\/ExtratoFatura\/extrato/.test(url)) {
-      textResponse = creditCardBillTransactions;
+      if (body === 'numeroContaCartao=12345678') {
+        textResponse = creditCardCurrentBillTransactions;
+      } else {
+        textResponse = creditCardBillTransactions;
+      }
     }
   }
 

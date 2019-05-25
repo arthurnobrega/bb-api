@@ -54,28 +54,92 @@ describe('Credit Card', () => {
     const card = cards[0];
     const bills = await card.getBills();
 
-    expect(bills).toHaveLength(23);
+    expect(bills).toHaveLength(24);
 
-    const [first, second] = bills;
+    const [first, second, third] = bills;
 
     expect(first).toEqual({
       cardAccountNumber: '12345678',
-      billId: '123456789',
-      billDate: '25112018',
+      billDate: '25122018',
+      status: 'opened',
     });
 
     expect(second).toEqual({
       cardAccountNumber: '12345678',
+      billId: '123456789',
+      billDate: '25112018',
+      status: 'closed',
+    });
+
+    expect(third).toEqual({
+      cardAccountNumber: '12345678',
       billId: '280905751',
       billDate: '25102018',
+      status: 'closed',
     });
   });
 
-  it('returns credit card bill trasactions', async () => {
+  it('returns credit card trasactions from opened bill', async () => {
     const cards = await bb.creditCard.getCards();
     const card = cards[0];
     const bills = await card.getBills();
     const bill = bills[0];
+
+    const transactions = await bill.getTransactions();
+
+    expect(transactions).toHaveLength(7);
+
+    expect(transactions).toMatchObject([
+      {
+        type: 'payment',
+        amount: 1634.91,
+        date: new Date(2019, 4, 2),
+        description: 'PGTO DEBITO CONTA 1234 000005879 200',
+      },
+      {
+        type: 'atSight',
+        amount: -46,
+        date: new Date(2019, 4, 20),
+        description: 'SPOLETO NOVA IORQUE',
+      },
+      {
+        type: 'atSight',
+        amount: -44.3,
+        date: new Date(2019, 4, 20),
+        description: 'SUPERMERCADOS NOVA IORQUE',
+      },
+      {
+        type: 'atSight',
+        amount: -39.8,
+        date: new Date(2019, 4, 20),
+        description: 'IFOOD*IFOOD MIAMI',
+      },
+      {
+        type: 'installment',
+        amount: -177,
+        date: new Date(2019, 4, 3),
+        description: 'YOUTUBE D PARC 01/12 SAO PAULO',
+      },
+      {
+        type: 'installment',
+        amount: -155.36,
+        date: new Date(2019, 4, 10),
+        description: 'TESTE DF ASA PARC 03/03 NOVA IORQUE',
+      },
+      {
+        type: 'installment',
+        amount: -300.0,
+        date: new Date(2019, 3, 29),
+        description: 'VITALIDADE PARC 01/04 NOVA IORQUE',
+      },
+    ]);
+  });
+
+  it('returns credit card trasactions from closed bill', async () => {
+    const cards = await bb.creditCard.getCards();
+    const card = cards[0];
+    const bills = await card.getBills();
+    const bill = bills[1];
 
     const transactions = await bill.getTransactions();
 

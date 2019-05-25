@@ -69,7 +69,7 @@ var BBCard = function () {
       var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
         var _this = this;
 
-        var billsUrl, params, response, text, json;
+        var billsUrl, params, response, text, json, bills, openedBillDate;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -97,7 +97,7 @@ var BBCard = function () {
               case 7:
                 text = _context.sent;
                 json = JSON.parse(text);
-                return _context.abrupt('return', json.conteiner.telas[0].sessoes[0].celulas.map(function (c) {
+                bills = json.conteiner.telas[0].sessoes[0].celulas.map(function (c) {
                   return c.protocolo.parametros.map(function (p) {
                     return (0, _defineProperty3.default)({}, p[0], p[1]);
                   }).reduce(function (acc, p) {
@@ -107,11 +107,22 @@ var BBCard = function () {
                   return new _cardBill2.default({
                     cardAccountNumber: _this.cardAccountNumber,
                     billId: p.sequencialFatura,
-                    billDate: p.dataFatura
+                    billDate: p.dataFatura,
+                    status: 'closed'
                   });
+                });
+                openedBillDate = bills[0].billDate.slice(0, 2) + (parseInt(bills[0].billDate.slice(2, 4), 10) + 1).toString().padStart(2, '0') + bills[0].billDate.slice(4, 8);
+
+
+                bills.unshift(new _cardBill2.default({
+                  cardAccountNumber: bills[0].cardAccountNumber,
+                  billDate: openedBillDate,
+                  status: 'opened'
                 }));
 
-              case 10:
+                return _context.abrupt('return', bills);
+
+              case 13:
               case 'end':
                 return _context.stop();
             }
