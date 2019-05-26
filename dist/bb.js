@@ -169,9 +169,28 @@ var BB = function () {
     }()
   }, {
     key: 'isLoggedIn',
-    value: function isLoggedIn() {
-      return !!_loginCookie2.default.getGlobal();
-    }
+    value: function () {
+      var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                return _context3.abrupt('return', !!_loginCookie2.default.getGlobal());
+
+              case 1:
+              case 'end':
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function isLoggedIn() {
+        return _ref4.apply(this, arguments);
+      }
+
+      return isLoggedIn;
+    }()
   }]);
   return BB;
 }();

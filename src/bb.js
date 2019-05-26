@@ -64,7 +64,7 @@ export default class BB {
     return login;
   }
 
-  isLoggedIn() {
+  async isLoggedIn() {
     return !!LoginCookie.getGlobal();
   }
 }
