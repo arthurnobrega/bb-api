@@ -93,6 +93,8 @@ var BB = function () {
     this.checking = null;
     this.savings = null;
     this.creditCard = null;
+
+    _loginCookie2.default.setGlobal();
   }
 
   (0, _createClass3.default)(BB, [{
@@ -165,6 +167,11 @@ var BB = function () {
 
       return login;
     }()
+  }, {
+    key: 'isLoggedIn',
+    value: function isLoggedIn() {
+      return !!_loginCookie2.default.getGlobal();
+    }
   }]);
   return BB;
 }();

@@ -1,8 +1,12 @@
 import BB from './bb';
 
-const bb = new BB();
-
 describe('Banco do Brasil API', () => {
+  let bb;
+
+  beforeEach(() => {
+    bb = new BB();
+  });
+
   it('login', async () => {
     const credentials = {
       branch: '12340',
@@ -18,11 +22,24 @@ describe('Banco do Brasil API', () => {
     expect(login).toHaveProperty('titularidade', 1);
     expect(login).toHaveProperty('numeroContratoOrigem', '12345-6');
     expect(login).toHaveProperty('dependenciaOrigem', '1234-0');
-    expect(login).toHaveProperty('segmento', 'EXCLUSIVO_REMOTO');
+    expect(login).toHaveProperty('segmento', 'ESTILO');
     expect(login).toHaveProperty('habilitadoParaAtendimentoRemoto', 'true');
     expect(login).toHaveProperty(
       'statusAutorizacaoTransacoesFinanceiras',
-      'INICIALIZADO',
+      'NAO_AUTORIZADO',
     );
+  });
+
+  it('checks if it is already logged in', async () => {
+    expect(bb.isLoggedIn()).toBe(false);
+
+    const credentials = {
+      branch: '12340',
+      account: '123456',
+      password: '12345678',
+    };
+
+    await bb.login(credentials);
+    expect(bb.isLoggedIn()).toBe(true);
   });
 });

@@ -28,6 +28,10 @@ export default class BB {
 
   creditCard = null;
 
+  constructor() {
+    LoginCookie.setGlobal();
+  }
+
   async login({ branch, account, password }) {
     const loginUrl = 'servico/ServicoLogin/login';
     const hash = await refreshHash();
@@ -58,5 +62,9 @@ export default class BB {
     this.creditCard = new BBCreditCard();
 
     return login;
+  }
+
+  isLoggedIn() {
+    return !!LoginCookie.getGlobal();
   }
 }
