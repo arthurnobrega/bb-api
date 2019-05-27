@@ -1,14 +1,7 @@
 {
-  "presets": [
-    "env",
-    "stage-0"
-  ],
+  "presets": ["@babel/preset-env"],
   "plugins": [
-    "transform-class-properties",
-    "transform-decorators-legacy",
-    ["transform-runtime", {
-      "polyfill": false,
-      "regenerator": true
-    }]
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime"
   ]
 }

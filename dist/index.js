@@ -1,29 +1,53 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.run = undefined;
+exports.run = run;
+exports["default"] = void 0;
 
-var _regenerator = require('babel-runtime/regenerator');
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-var _regenerator2 = _interopRequireDefault(_regenerator);
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
-var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
+var _util = _interopRequireDefault(require("util"));
 
-var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+var _yargs = _interopRequireDefault(require("yargs"));
 
-var run = exports.run = function () {
-  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+var _bb = _interopRequireDefault(require("./bb"));
+
+var _yargs$option$option$ = _yargs["default"].option('bbBranch', {
+  string: true
+}).option('bbAccount', {
+  string: true
+}).option('bbPassword', {
+  string: true
+}),
+    argv = _yargs$option$option$.argv;
+
+function run() {
+  return _run.apply(this, arguments);
+}
+
+function _run() {
+  _run = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee() {
     var bb, branch, account, password, checkingBalance, checkingTransactions, savingsAccounts, savingsTransactions, creditCards, creditCardBills, creditCardTransactions;
-    return _regenerator2.default.wrap(function _callee$(_context) {
+    return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            bb = new _bb2.default();
+            bb = new _bb["default"]();
             branch = argv.bbBranch, account = argv.bbAccount, password = argv.bbPassword;
             _context.next = 4;
-            return bb.login({ branch: branch, account: account, password: password });
+            return bb.login({
+              branch: branch,
+              account: account,
+              password: password
+            });
 
           case 4:
             _context.next = 6;
@@ -39,14 +63,14 @@ var run = exports.run = function () {
 
           case 9:
             checkingTransactions = _context.sent;
-
-
             // eslint-disable-next-line no-console
-            console.log(_util2.default.inspect({
+            console.log(_util["default"].inspect({
               checkingBalance: checkingBalance,
               checkingTransactions: checkingTransactions
-            }, { showHidden: false, depth: null }));
-
+            }, {
+              showHidden: false,
+              depth: null
+            }));
             _context.next = 13;
             return bb.savings.getAccounts();
 
@@ -60,14 +84,14 @@ var run = exports.run = function () {
 
           case 16:
             savingsTransactions = _context.sent;
-
-
             // eslint-disable-next-line no-console
-            console.log(_util2.default.inspect({
+            console.log(_util["default"].inspect({
               savingsAccounts: savingsAccounts,
               savingsTransactions: savingsTransactions
-            }, { showHidden: false, depth: null }));
-
+            }, {
+              showHidden: false,
+              depth: null
+            }));
             _context.next = 20;
             return bb.creditCard.getCards();
 
@@ -83,48 +107,30 @@ var run = exports.run = function () {
 
           case 26:
             creditCardTransactions = _context.sent;
-
-
             // eslint-disable-next-line no-console
-            console.log(_util2.default.inspect({
+            console.log(_util["default"].inspect({
               creditCards: creditCards,
               creditCardBills: creditCardBills,
               creditCardTransactions: creditCardTransactions
-            }, { showHidden: false, depth: null }));
+            }, {
+              showHidden: false,
+              depth: null
+            }));
 
           case 28:
-          case 'end':
+          case "end":
             return _context.stop();
         }
       }
-    }, _callee, this);
+    }, _callee);
   }));
-
-  return function run() {
-    return _ref.apply(this, arguments);
-  };
-}();
-
-var _util = require('util');
-
-var _util2 = _interopRequireDefault(_util);
-
-var _yargs = require('yargs');
-
-var _yargs2 = _interopRequireDefault(_yargs);
-
-var _bb = require('./bb');
-
-var _bb2 = _interopRequireDefault(_bb);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _yargs$option$option$ = _yargs2.default.option('bbBranch', { string: true }).option('bbAccount', { string: true }).option('bbPassword', { string: true }),
-    argv = _yargs$option$option$.argv;
+  return _run.apply(this, arguments);
+}
 
 if (require.main === module) {
   run();
 }
 
-exports.default = _bb2.default;
+var _default = _bb["default"];
+exports["default"] = _default;
 //# sourceMappingURL=index.js.map

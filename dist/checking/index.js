@@ -1,68 +1,54 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = undefined;
+exports["default"] = void 0;
 
-var _regenerator = require('babel-runtime/regenerator');
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-var _regenerator2 = _interopRequireDefault(_regenerator);
+var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
 
-var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/objectSpread"));
 
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
-var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
+var _nodeFetch = _interopRequireDefault(require("node-fetch"));
 
-var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+var _querystring = _interopRequireDefault(require("querystring"));
 
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+var _loginCookie = _interopRequireDefault(require("../loginCookie"));
 
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+var _constants = require("../constants");
 
-var _createClass2 = require('babel-runtime/helpers/createClass');
+var _helpers = require("../helpers");
 
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _nodeFetch = require('node-fetch');
-
-var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
-
-var _querystring = require('querystring');
-
-var _querystring2 = _interopRequireDefault(_querystring);
-
-var _loginCookie = require('../loginCookie');
-
-var _loginCookie2 = _interopRequireDefault(_loginCookie);
-
-var _constants = require('../constants');
-
-var _helpers = require('../helpers');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var BBChecking = function () {
+var BBChecking =
+/*#__PURE__*/
+function () {
   function BBChecking() {
-    (0, _classCallCheck3.default)(this, BBChecking);
+    (0, _classCallCheck2["default"])(this, BBChecking);
   }
 
-  (0, _createClass3.default)(BBChecking, [{
-    key: 'getTransactions',
+  (0, _createClass2["default"])(BBChecking, [{
+    key: "getTransactions",
     value: function () {
-      var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref2) {
-        var year = _ref2.year,
-            month = _ref2.month;
-        var pad, transactionsUrl, params, response, text, json, transactions;
-        return _regenerator2.default.wrap(function _callee$(_context) {
+      var _getTransactions = (0, _asyncToGenerator2["default"])(
+      /*#__PURE__*/
+      _regenerator["default"].mark(function _callee(_ref) {
+        var year, month, pad, transactionsUrl, params, response, text, json, transactions;
+        return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                year = _ref.year, month = _ref.month;
+
                 pad = function pad(s) {
                   return s.toString().padStart('0', 2);
                 };
@@ -70,32 +56,34 @@ var BBChecking = function () {
                 transactionsUrl = 'tela/ExtratoDeContaCorrente/extrato';
                 params = {};
 
-
                 if (year && month) {
-                  params = { periodo: '00' + pad(month) + year };
+                  params = {
+                    periodo: "00".concat(pad(month)).concat(year)
+                  };
                 }
 
-                _context.next = 6;
-                return (0, _nodeFetch2.default)('' + _constants.BASE_ENDPOINT + transactionsUrl, {
-                  headers: (0, _extends3.default)({}, _constants.DEFAULT_HEADERS, {
-                    cookie: _loginCookie2.default.getGlobal()
+                _context.next = 7;
+                return (0, _nodeFetch["default"])("".concat(_constants.BASE_ENDPOINT).concat(transactionsUrl), {
+                  headers: (0, _objectSpread2["default"])({}, _constants.DEFAULT_HEADERS, {
+                    cookie: _loginCookie["default"].getGlobal()
                   }),
                   method: 'POST',
-                  body: _querystring2.default.stringify(params)
+                  body: _querystring["default"].stringify(params)
                 });
 
-              case 6:
+              case 7:
                 response = _context.sent;
-                _context.next = 9;
+                _context.next = 10;
                 return response.text();
 
-              case 9:
+              case 10:
                 text = _context.sent;
                 json = JSON.parse(text);
                 transactions = json.conteiner.telas[0].sessoes.reduce(function (acc, session) {
                   var monthString = 'Mês referência: ';
+
                   if (session.TIPO === 'sessao' && session.cabecalho && session.cabecalho.indexOf(monthString) === 0) {
-                    return [].concat((0, _toConsumableArray3.default)(acc), (0, _toConsumableArray3.default)(session.celulas.reduce(function (cellAcc, cell) {
+                    return [].concat((0, _toConsumableArray2["default"])(acc), (0, _toConsumableArray2["default"])(session.celulas.reduce(function (cellAcc, cell) {
                       if (cell.TIPO === 'celula' && cell.componentes.length === 3 && cell.componentes[0].componentes[0].texto !== 'Dia') {
                         var description = cell.componentes[1].componentes[0].texto;
                         var day = cell.componentes[0].componentes[0].texto;
@@ -105,7 +93,7 @@ var BBChecking = function () {
                           return cellAcc;
                         }
 
-                        return [].concat((0, _toConsumableArray3.default)(cellAcc), [{
+                        return [].concat((0, _toConsumableArray2["default"])(cellAcc), [{
                           date: new Date(year, month - 1, day),
                           description: (0, _helpers.treatDescription)(description),
                           amount: (0, _helpers.parseAmountString)(amount)
@@ -118,37 +106,39 @@ var BBChecking = function () {
 
                   return acc;
                 }, []);
-                return _context.abrupt('return', transactions);
+                return _context.abrupt("return", transactions);
 
-              case 13:
-              case 'end':
+              case 14:
+              case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this);
+        }, _callee);
       }));
 
       function getTransactions(_x) {
-        return _ref.apply(this, arguments);
+        return _getTransactions.apply(this, arguments);
       }
 
       return getTransactions;
     }()
   }, {
-    key: 'getBalance',
+    key: "getBalance",
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
+      var _getBalance = (0, _asyncToGenerator2["default"])(
+      /*#__PURE__*/
+      _regenerator["default"].mark(function _callee2() {
         var balanceUrl, response, text, _JSON$parse, servicoSaldo, saldo;
 
-        return _regenerator2.default.wrap(function _callee2$(_context2) {
+        return _regenerator["default"].wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 balanceUrl = 'servico/ServicoSaldo/saldo';
                 _context2.next = 3;
-                return (0, _nodeFetch2.default)('' + _constants.BASE_ENDPOINT + balanceUrl, {
-                  headers: (0, _extends3.default)({}, _constants.DEFAULT_HEADERS, {
-                    cookie: _loginCookie2.default.getGlobal()
+                return (0, _nodeFetch["default"])("".concat(_constants.BASE_ENDPOINT).concat(balanceUrl), {
+                  headers: (0, _objectSpread2["default"])({}, _constants.DEFAULT_HEADERS, {
+                    cookie: _loginCookie["default"].getGlobal()
                   }),
                   method: 'POST'
                 });
@@ -162,18 +152,18 @@ var BBChecking = function () {
                 text = _context2.sent;
                 _JSON$parse = JSON.parse(text), servicoSaldo = _JSON$parse.servicoSaldo;
                 saldo = servicoSaldo.saldo;
-                return _context2.abrupt('return', (0, _helpers.parseAmountString)(saldo));
+                return _context2.abrupt("return", (0, _helpers.parseAmountString)(saldo));
 
               case 10:
-              case 'end':
+              case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee2);
       }));
 
       function getBalance() {
-        return _ref3.apply(this, arguments);
+        return _getBalance.apply(this, arguments);
       }
 
       return getBalance;
@@ -182,5 +172,5 @@ var BBChecking = function () {
   return BBChecking;
 }();
 
-exports.default = BBChecking;
+exports["default"] = BBChecking;
 //# sourceMappingURL=index.js.map
