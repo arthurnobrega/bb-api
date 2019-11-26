@@ -78,7 +78,6 @@ function () {
             case 10:
               text = _context.sent;
               json = JSON.parse(text);
-              console.log(json);
               transactions = json.conteiner.telas[0].sessoes.reduce(function (acc, session) {
                 var monthString = 'Mês referência: ';
 
@@ -108,7 +107,7 @@ function () {
               }, []);
               return _context.abrupt("return", transactions);
 
-            case 15:
+            case 14:
             case "end":
               return _context.stop();
           }

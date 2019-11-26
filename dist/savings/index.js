@@ -58,7 +58,6 @@ function () {
             case 6:
               text = _context.sent;
               json = JSON.parse(text);
-              console.log(json);
               sessions = json.conteiner.telas[0].sessoes[0];
               title = sessions.cabecalho;
               variations = sessions.celulas.map(function (c) {
@@ -71,7 +70,7 @@ function () {
                 });
               }));
 
-            case 13:
+            case 12:
             case "end":
               return _context.stop();
           }

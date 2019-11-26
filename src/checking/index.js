@@ -26,7 +26,6 @@ export default class BBChecking {
 
     const text = await response.text();
     const json = JSON.parse(text);
-    console.log(json);
 
     const transactions = json.conteiner.telas[0].sessoes.reduce(
       (acc, session) => {

@@ -16,7 +16,6 @@ export default class BBSavings {
 
     const text = await response.text();
     const json = JSON.parse(text);
-    console.log(json);
 
     const sessions = json.conteiner.telas[0].sessoes[0];
     const title = sessions.cabecalho;
