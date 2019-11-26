@@ -1,6 +1,6 @@
 {
   "name": "bb-api",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Unofficial node.js implementation of Banco do Brasil's mobile API",
   "main": "dist/index.js",
   "author": "Arthur Nobrega",

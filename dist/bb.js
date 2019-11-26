@@ -15,8 +15,6 @@ var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/de
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
-
 var _nodeFetch = _interopRequireDefault(require("node-fetch"));
 
 var _querystring = _interopRequireDefault(require("querystring"));
@@ -31,49 +29,39 @@ var _savings = _interopRequireDefault(require("./savings"));
 
 var _creditCard = _interopRequireDefault(require("./creditCard"));
 
-var refreshHash =
-/*#__PURE__*/
-function () {
-  var _ref = (0, _asyncToGenerator2["default"])(
-  /*#__PURE__*/
-  _regenerator["default"].mark(function _callee() {
-    var hashUrl, params, response, hash;
-    return _regenerator["default"].wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            hashUrl = 'hash';
-            params = {
-              id: '00000000000000000000000000000000'
-            };
-            _context.next = 4;
-            return (0, _nodeFetch["default"])("".concat(_constants.BASE_ENDPOINT).concat(hashUrl), {
-              headers: _constants.DEFAULT_HEADERS,
-              method: 'POST',
-              body: _querystring["default"].stringify(params)
-            });
+var refreshHash = function refreshHash() {
+  var hashUrl, params, response, hash;
+  return _regenerator["default"].async(function refreshHash$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          hashUrl = 'hash';
+          params = {
+            id: '00000000000000000000000000000000'
+          };
+          _context.next = 4;
+          return _regenerator["default"].awrap((0, _nodeFetch["default"])("".concat(_constants.BASE_ENDPOINT).concat(hashUrl), {
+            headers: _constants.DEFAULT_HEADERS,
+            method: 'POST',
+            body: _querystring["default"].stringify(params)
+          }));
 
-          case 4:
-            response = _context.sent;
-            _context.next = 7;
-            return response.text();
+        case 4:
+          response = _context.sent;
+          _context.next = 7;
+          return _regenerator["default"].awrap(response.text());
 
-          case 7:
-            hash = _context.sent;
-            return _context.abrupt("return", hash);
+        case 7:
+          hash = _context.sent;
+          return _context.abrupt("return", hash);
 
-          case 9:
-          case "end":
-            return _context.stop();
-        }
+        case 9:
+        case "end":
+          return _context.stop();
       }
-    }, _callee);
-  }));
-
-  return function refreshHash() {
-    return _ref.apply(this, arguments);
-  };
-}();
+    }
+  });
+};
 
 var BB =
 /*#__PURE__*/
@@ -94,69 +82,59 @@ function () {
     }
   }, {
     key: "login",
-    value: function () {
-      var _login = (0, _asyncToGenerator2["default"])(
-      /*#__PURE__*/
-      _regenerator["default"].mark(function _callee2(_ref2) {
-        var branch, account, password, loginUrl, hash, params, response, text, _JSON$parse, login;
+    value: function login(_ref) {
+      var branch, account, password, loginUrl, hash, params, response, text, _JSON$parse, login;
 
-        return _regenerator["default"].wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                branch = _ref2.branch, account = _ref2.account, password = _ref2.password;
-                loginUrl = 'servico/ServicoLogin/login';
-                _context2.next = 4;
-                return refreshHash();
+      return _regenerator["default"].async(function login$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              branch = _ref.branch, account = _ref.account, password = _ref.password;
+              loginUrl = 'servico/ServicoLogin/login';
+              _context2.next = 4;
+              return _regenerator["default"].awrap(refreshHash());
 
-              case 4:
-                hash = _context2.sent;
-                params = {
-                  idh: hash,
-                  dependenciaOrigem: branch,
-                  numeroContratoOrigem: account,
-                  senhaConta: password,
-                  titularidade: '1',
-                  apelido: 'NickRandom.123456',
-                  idDispositivo: '2131296671'
-                };
-                _context2.next = 8;
-                return (0, _nodeFetch["default"])("".concat(_constants.BASE_ENDPOINT).concat(loginUrl), {
-                  headers: _constants.DEFAULT_HEADERS,
-                  method: 'POST',
-                  body: _querystring["default"].stringify(params)
-                });
+            case 4:
+              hash = _context2.sent;
+              params = {
+                idh: hash,
+                dependenciaOrigem: branch,
+                numeroContratoOrigem: account,
+                senhaConta: password,
+                titularidade: '1',
+                apelido: 'NickRandom.123456',
+                idDispositivo: '2131296671'
+              };
+              _context2.next = 8;
+              return _regenerator["default"].awrap((0, _nodeFetch["default"])("".concat(_constants.BASE_ENDPOINT).concat(loginUrl), {
+                headers: _constants.DEFAULT_HEADERS,
+                method: 'POST',
+                body: _querystring["default"].stringify(params)
+              }));
 
-              case 8:
-                response = _context2.sent;
+            case 8:
+              response = _context2.sent;
 
-                _loginCookie["default"].setGlobal(response.headers.get('set-cookie'));
+              _loginCookie["default"].setGlobal(response.headers.get('set-cookie'));
 
-                _context2.next = 12;
-                return response.text();
+              _context2.next = 12;
+              return _regenerator["default"].awrap(response.text());
 
-              case 12:
-                text = _context2.sent;
-                _JSON$parse = JSON.parse(text), login = _JSON$parse.login;
-                this.checking = new _checking["default"]();
-                this.savings = new _savings["default"]();
-                this.creditCard = new _creditCard["default"]();
-                return _context2.abrupt("return", login);
+            case 12:
+              text = _context2.sent;
+              _JSON$parse = JSON.parse(text), login = _JSON$parse.login;
+              this.checking = new _checking["default"]();
+              this.savings = new _savings["default"]();
+              this.creditCard = new _creditCard["default"]();
+              return _context2.abrupt("return", login);
 
-              case 18:
-              case "end":
-                return _context2.stop();
-            }
+            case 18:
+            case "end":
+              return _context2.stop();
           }
-        }, _callee2, this);
-      }));
-
-      function login(_x) {
-        return _login.apply(this, arguments);
-      }
-
-      return login;
-    }()
+        }
+      }, null, this);
+    }
   }]);
   return BB;
 }();
