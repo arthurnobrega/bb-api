@@ -14,11 +14,12 @@
     "npm": "^6.4.1"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "yarn run snyk-protect && npm run build",
     "build": "babel src -d dist --source-maps --ignore **/*.test.js,**/__mocks__",
     "start": "yarn build && node dist/index.js",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "snyk-protect": "snyk protect"
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -50,6 +51,8 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/runtime": "^7.4.5",
     "node-fetch": "^2.6.0",
-    "yargs": "^13.2.4"
-  }
+    "yargs": "^13.2.4",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
