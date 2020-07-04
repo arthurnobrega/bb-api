@@ -59,7 +59,7 @@ export default class BB {
     LoginCookie.setGlobal(response.headers.get('set-cookie'));
 
     const text = await response.text();
-    const { login } = JSON.parse(text);
+    const { login } = JSON.parse(text) || {};
 
     this.checking = new BBChecking();
     this.savings = new BBSavings();
