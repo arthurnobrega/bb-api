@@ -50,6 +50,6 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/runtime": "^7.4.5",
     "node-fetch": "^2.6.0",
-    "yargs": "^13.2.4"
+    "yargs": "^16.0.0"
   }
 }
