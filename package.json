@@ -47,7 +47,7 @@
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.22.6",
     "@babel/runtime": "^7.4.5",
     "node-fetch": "^2.6.0",
     "yargs": "^13.2.4"
